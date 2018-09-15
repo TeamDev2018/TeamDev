@@ -1,0 +1,17 @@
+h1 {
+    font-size: 4em;
+    margin: 0 auto;
+}
+
+mat-toolbar {
+    padding: 15px;
+}
+
+/* .container {
+    height: 100%;
+} */
+
+
+.container > .item {
+    margin-top: 5px;
+}
