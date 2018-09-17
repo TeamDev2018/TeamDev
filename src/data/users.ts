@@ -14,4 +14,5 @@ export const USERS = new Array<User>(
     new User('Florian', 'Bauer'),
     new User('Evi', 'Heuer'),
     new User('Franziska', 'Dietl'),
+    new User('Carola', 'Vaitl')
 )

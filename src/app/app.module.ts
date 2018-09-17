@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -8,21 +9,36 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 
-import { AvatarModule } from '../../projects/ngx-avatar/src/lib';
+import { AvatarModule } from 'ngx-avatar';
+import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import {MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NewUserDialogComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     FlexLayoutModule,
     MatGridListModule,
     MatToolbarModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatInputModule,
+    MatDialogModule,
+    
     AvatarModule
+  ],
+  entryComponents: [
+    NewUserDialogComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

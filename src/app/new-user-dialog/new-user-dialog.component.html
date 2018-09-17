@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Team verstärken</h1>
+<div class="container" fxLayout="column" fxLayoutAlign="center center">
+  <form (ngSubmit)="onSubmit()" #form="ngForm" novalidate>
+    <mat-form-field appearance="outline">
+      <mat-label for="firstname">Vorname</mat-label>
+      <input [(ngModel)]="user.FirstName" id="firstname" name="firstname" required matInput>
+      <mat-icon matSuffix>accessibility_new</mat-icon>
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="outline">
+      <mat-label for="lastname">Nachname</mat-label>
+      <input [(ngModel)]="user.LastName" id="lastname" name="lastname" required matInput>
+      <mat-icon matSuffix>accessibility_new</mat-icon>
+    </mat-form-field>
+    <br>
+    <button type="submit" [disabled]="!form.form.valid" mat-raised-button color="primary">Mitglied hinzufügen</button>
+  </form>
+</div>
