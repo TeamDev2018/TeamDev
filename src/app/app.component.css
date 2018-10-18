@@ -7,12 +7,3 @@ mat-toolbar {
     padding: 15px;
     margin-bottom: 10px;
 }
-
-.container > .item {
-    margin-top: 5px;
-}
-
-a#start {
-    padding: 15px;
-    font-size: 3em;
-}

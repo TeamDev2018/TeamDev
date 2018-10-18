@@ -4,25 +4,4 @@
   </mat-toolbar-row>
 </mat-toolbar>
 
-<div class="container" fxLayout="row">
-  <div class="container" style="border-right: 3px solid darkgrey" fxFlex="50" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
-    <button (click)="addNewUser()" mat-fab>
-      <mat-icon aria-label="neuen Benutzer hinzufügen" class="md-48">add</mat-icon>
-    </button>
-    <mat-label>Neues Mitglied?</mat-label>
-  </div>
-  <div fxFlex="50" fxFlexOffset="5" class="container middle" fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="start center">
-    <div class="item" *ngFor="let user of users">
-      <ngx-avatar size="100" name="{{ user.FirstName }} {{ user.LastName }}"></ngx-avatar>
-    </div>
-  </div>
-  <div class="container" fxFlex="5" fxLayout="column" fxLayoutAlign="center" fxLayoutGap="10px"></div>
-</div>
-<div style="margin-top:50px" class="container" fxLayoutAlign="center" fxLayout="row">
-
-</div>
-<div class="container" fxLayoutAlign="center" fxLayout="row" fxLayoutGap="10px">
-  <div class="container" fxFlex="100" fxLayout="column">
-    <a id="start" mat-raised-button color="primary">Let's go!</a>
-  </div>
-</div>
+<router-outlet></router-outlet>
