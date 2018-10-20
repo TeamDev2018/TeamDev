@@ -84,8 +84,6 @@ export class AppComponent implements OnInit {
 
     p.draw = () => {
       p.background('#0000000');
-      // circles bounce against each others and against boxes
-      p.allSprites.bounce(p.allSprites);
 
       // all sprites bounce at the screen edges
       for (let i = 0; i < p.allSprites.length; i++) {
@@ -116,6 +114,8 @@ export class AppComponent implements OnInit {
 
       p.drawSprites();
       p.addButton.mouseUpdate();
+      // circles bounce against each others and against boxes
+      p.allSprites.bounce(p.allSprites);
       // p.addButton.collider.draw();
     };
   }
