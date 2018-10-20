@@ -32,6 +32,24 @@ export class AppComponent implements OnInit {
     p.users = that.users;
     p.circles = new p.Group();
 
+    p.addRandomCircle = () => {
+      const circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
+
+        circle.setSpeed(p.random(2, 4), p.random(0, 360));
+
+        circle.draw = function() {
+
+          p.fill(this.shapeColor);
+          p.ellipse(0, 0, 100 , 100 );
+        };
+        // scale affects the size of the collider
+        circle.scale = p.random(0.7, 1);
+        circle.setCollider('circle', -2, 2, circle.scale * 50);
+        // mass determines the force exchange in case of bounce
+        circle.mass = circle.scale;
+        return circle;
+    };
+
     p.windowResized = () => {
       p.resizeCanvas(p.windowWidth, p.windowHeight / 2);
     };
@@ -41,40 +59,18 @@ export class AppComponent implements OnInit {
       canvas.parent('p5play');
 
       for (let i = 0; i < p.users.length; i++) {
-        const circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
-
-        circle.setSpeed(p.random(2, 4), p.random(0, 360));
-
-        circle.draw = function() {
-
-          p.fill(this.shapeColor);
-
-          p.ellipse(0, 0, 100 , 100 );
-        };
-        // scale affects the size of the collider
-        circle.scale = p.random(0.7, 1);
-        circle.setCollider('circle', -2, 2, circle.scale * 50);
-        // mass determines the force exchange in case of bounce
-        circle.mass = circle.scale;
-
+        const circle = p.addRandomCircle();
         p.circles.add(circle);
       }
-      const addButton = p.createSprite(p.random(0, p.width), p.random(0, p.height));
-
-      addButton.setSpeed(p.random(2, 4), p.random(0, 360));
-      addButton.draw = function() {
-
-        p.fill(this.shapeColor);
-        p.ellipse(0, 0, 100, 100);
-      };
+      const addButton = p.addRandomCircle();
       addButton.onMouseReleased = () => {
         that.addNewUser();
       };
       // scale affects the size of the collider
       addButton.scale = 1.25;
+      addButton.mass = addButton.scale;
       addButton.setCollider('circle', -2, 2, addButton.scale * 50);
       // mass determines the force exchange in case of bounce
-      addButton.mass = addButton.scale;
       p.addButton = addButton;
     };
 
@@ -133,6 +129,7 @@ export class AppComponent implements OnInit {
     dialogRef.beforeClose().subscribe((newUser: User) => {
       if (newUser) {
         this.users.push(newUser);
+        this.P5.circles.add(this.P5.addRandomCircle());
       }
     });
   }
