@@ -14,7 +14,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 
 import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 
 @NgModule({
@@ -34,7 +34,6 @@ import {MatInputModule} from '@angular/material';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
-    
     AvatarModule
   ],
   entryComponents: [
