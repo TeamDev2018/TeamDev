@@ -35,19 +35,25 @@ export class AppComponent implements OnInit {
     p.addRandomCircle = () => {
       const circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
 
-        circle.setSpeed(p.random(2, 4), p.random(0, 360));
+      circle.setSpeed(p.random(2, 4), p.random(0, 360));
 
-        circle.draw = function() {
+      circle.draw = function() {
 
-          p.fill(this.shapeColor);
-          p.ellipse(0, 0, 100 , 100 );
-        };
-        // scale affects the size of the collider
-        circle.scale = p.random(0.7, 1);
-        circle.setCollider('circle', -2, 2, circle.scale * 50);
-        // mass determines the force exchange in case of bounce
-        circle.mass = circle.scale;
-        return circle;
+        p.fill(this.shapeColor);
+        p.ellipse(0, 0, 100 , 100 );
+        if (this.text) {
+          p.fill('black');
+          p.textAlign(p.CENTER);
+          p.textSize(this.scale * 40);
+          p.text(this.text, 0, 20);
+        }
+      };
+      // scale affects the size of the collider
+      circle.scale = p.random(0.7, 1);
+      circle.setCollider('circle', 0, 0, 50);
+      // mass determines the force exchange in case of bounce
+      circle.mass = circle.scale;
+      return circle;
     };
 
     p.windowResized = () => {
@@ -60,16 +66,18 @@ export class AppComponent implements OnInit {
 
       for (let i = 0; i < p.users.length; i++) {
         const circle = p.addRandomCircle();
+        circle.text = p.users[i].FirstName[0] + p.users[i].LastName[0];
         p.circles.add(circle);
       }
       const addButton = p.addRandomCircle();
+      addButton.text = '+';
       addButton.onMouseReleased = () => {
         that.addNewUser();
       };
       // scale affects the size of the collider
       addButton.scale = 1.25;
       addButton.mass = addButton.scale;
-      addButton.setCollider('circle', -2, 2, addButton.scale * 50);
+      addButton.setCollider('circle', 0, 0, 50);
       // mass determines the force exchange in case of bounce
       p.addButton = addButton;
     };
@@ -82,9 +90,7 @@ export class AppComponent implements OnInit {
       // all sprites bounce at the screen edges
       for (let i = 0; i < p.allSprites.length; i++) {
         const s = p.allSprites[i];
-        // s.update();
-        s.position.x += s.velocity.x;
-        s.position.y += s.velocity.y;
+        s.update();
         if (s.position.x < 0) {
           s.position.x = 1;
           s.velocity.x = p.abs(s.velocity.x);
@@ -105,19 +111,12 @@ export class AppComponent implements OnInit {
           s.velocity.y = -p.abs(s.velocity.y);
         }
 
+        // s.collider.draw();
       }
 
       p.drawSprites();
-      p.textAlign(p.CENTER);
-      for (let i = 0; i < p.circles.length; i++) {
-        const s = p.circles[i];
-        p.textSize(s.scale * 40);
-        const user = p.users[i];
-        p.text(user.FirstName[0] + user.LastName[0], s.position.x, s.position.y + s.scale * 20);
-      }
       p.addButton.mouseUpdate();
-      p.textSize(80);
-      p.text('+', p.addButton.position.x, p.addButton.position.y + 35);
+      // p.addButton.collider.draw();
     };
   }
 
@@ -129,7 +128,9 @@ export class AppComponent implements OnInit {
     dialogRef.beforeClose().subscribe((newUser: User) => {
       if (newUser) {
         this.users.push(newUser);
-        this.P5.circles.add(this.P5.addRandomCircle());
+        const circle = this.P5.addRandomCircle(newUser);
+        circle.text = newUser.FirstName[0] + newUser.LastName[0];
+        this.P5.circles.add(circle);
       }
     });
   }
