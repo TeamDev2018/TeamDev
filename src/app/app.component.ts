@@ -48,7 +48,6 @@ export class AppComponent implements OnInit {
           p.text(this.text, 0, 20);
         }
       };
-      // scale affects the size of the collider
       circle.scale = p.random(0.7, 1);
       circle.setCollider('circle', 0, 0, 50);
       // mass determines the force exchange in case of bounce
@@ -76,10 +75,9 @@ export class AppComponent implements OnInit {
       addButton.onMouseReleased = () => {
         that.addNewUser();
       };
-      // scale affects the size of the collider
       addButton.scale = 1.25;
-      addButton.mass = addButton.scale;
       // mass determines the force exchange in case of bounce
+      addButton.mass = addButton.scale;
       p.addButton = addButton;
     };
 
@@ -115,6 +113,7 @@ export class AppComponent implements OnInit {
 
       p.drawSprites();
       p.addButton.mouseUpdate();
+
       // circles bounce against each others and against boxes
       p.allSprites.bounce(p.allSprites);
       // p.addButton.collider.draw();
@@ -129,7 +128,7 @@ export class AppComponent implements OnInit {
     dialogRef.beforeClose().subscribe((newUser: User) => {
       if (newUser) {
         this.users.push(newUser);
-        const circle = this.P5.addRandomCircle(newUser);
+        const circle = this.P5.addRandomCircle();
         circle.text = newUser.FirstName[0] + newUser.LastName[0];
         this.P5.circles.add(circle);
       }
