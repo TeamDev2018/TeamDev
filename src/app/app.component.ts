@@ -58,6 +58,8 @@ export class AppComponent implements OnInit {
 
     p.windowResized = () => {
       p.resizeCanvas(p.windowWidth, p.windowHeight / 2);
+      p.camera.position.x = p.width / 2;
+      p.camera.position.y = p.height / 2;
     };
 
     p.setup = () => {
@@ -77,7 +79,6 @@ export class AppComponent implements OnInit {
       // scale affects the size of the collider
       addButton.scale = 1.25;
       addButton.mass = addButton.scale;
-      addButton.setCollider('circle', 0, 0, 50);
       // mass determines the force exchange in case of bounce
       p.addButton = addButton;
     };
