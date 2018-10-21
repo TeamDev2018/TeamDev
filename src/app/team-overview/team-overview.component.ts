@@ -54,7 +54,7 @@ export class TeamOverviewComponent implements OnInit {
           p.fill('black');
           p.textAlign(p.CENTER);
           p.textSize(this.scale * 40);
-          p.text(this.text, 0, 20);
+          p.text(this.text, 0, 15);
         }
       };
       circle.scale = p.random(0.7, 1);
