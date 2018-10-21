@@ -141,6 +141,13 @@ export class TeamOverviewComponent implements OnInit {
     dialogRef.beforeClose().subscribe((newUser: User) => {
       if (newUser) {
         this.users.push(newUser);
+        const id = this.userService.createUser(newUser);
+        const circle = this.P5.addRandomCircle();
+        circle.text = newUser.FirstName[0] + newUser.LastName[0];
+        circle.onMouseReleased = () => {
+          this.router.navigate(['/user-detail', id]);
+        };
+        this.P5.circles.add(circle);
       }
     });
   }

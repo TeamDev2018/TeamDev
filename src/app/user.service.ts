@@ -19,4 +19,8 @@ export class UserService {
   getUser(id): Observable<User> {
     return of(this._Users[id]);
   }
+  createUser(newUser: User) {
+    this._Users.push(newUser);
+    return this._Users.length - 1;
+  }
 }
