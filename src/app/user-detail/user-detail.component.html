@@ -1,3 +1,13 @@
-<p>
-  user-detail works!
-</p>
+<div *ngIf="user">
+  <h2>{{user.FirstName}} {{user.LastName}} Details</h2>
+  <!--<div><span>id: </span>{{hero.id}}</div>-->
+  <div>
+    <label>FirstName:
+      <input [(ngModel)]="user.FirstName" placeholder="name"/>
+    </label>
+    <label>LastName:
+      <input [(ngModel)]="user.LastName" placeholder="name"/>
+    </label>
+  </div>
+  <button (click)="goBack()">go back</button>
+</div>
