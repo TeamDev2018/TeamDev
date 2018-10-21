@@ -102,23 +102,24 @@ export class TeamOverviewComponent implements OnInit {
       for (let i = 0; i < p.allSprites.length; i++) {
         const s = p.allSprites[i];
         s.update();
-        if (s.position.x < 0) {
-          s.position.x = 1;
+        const radius = s.scale * 50;
+        if (s.position.x < radius) {
+          s.position.x = radius + 1;
           s.velocity.x = p.abs(s.velocity.x);
         }
 
-        if (s.position.x > p.width) {
-          s.position.x = p.width - 1;
+        if (s.position.x > p.width - radius ) {
+          s.position.x = p.width - radius - 1;
           s.velocity.x = -p.abs(s.velocity.x);
         }
 
-        if (s.position.y < 0) {
-          s.position.y = 1;
+        if (s.position.y < radius) {
+          s.position.y = radius + 1;
           s.velocity.y = p.abs(s.velocity.y);
         }
 
-        if (s.position.y > p.height ) {
-          s.position.y = p.height - 1;
+        if (s.position.y > p.height - radius  ) {
+          s.position.y = p.height - radius - 1;
           s.velocity.y = -p.abs(s.velocity.y);
         }
 
