@@ -16,4 +16,7 @@ export class UserService {
   getUsers(): Observable<User[]> {
     return of(this._Users);
   }
+  getUser(id): Observable<User> {
+    return of(this._Users[id]);
+  }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { User } from '../../model/user';
-import { USERS } from '../../data/users';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-detail',
@@ -15,14 +15,21 @@ export class UserDetailComponent implements OnInit {
   user: User;
   constructor(
     private route: ActivatedRoute,
-    private location: Location
+    private location: Location,
+    private userService: UserService
   ) {}
 
   ngOnInit() {
-    this.users = USERS;
     const id: number = +this.route.snapshot.paramMap.get('id');
-    this.user = this.users[id];
+    this.getUser(id);
   }
+  getUser(id): void {
+    this.userService.getUser(id)
+    .subscribe(user => {
+      this.user = user;
+    });
+  }
+
   goBack(): void {
     this.location.back();
   }
