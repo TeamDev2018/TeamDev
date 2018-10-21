@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/user';
 import { MatDialog } from '../../../node_modules/@angular/material';
-import { USERS } from '../../data/users';
 import { NewUserDialogComponent } from '../new-user-dialog/new-user-dialog.component';
 import * as p5 from 'p5';
 import init from 'vue-p5-play';
+import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-team-overview',
@@ -17,11 +18,19 @@ export class TeamOverviewComponent implements OnInit {
   private P5;
   private circles;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+    private router: Router,
+    private userService: UserService) {}
 
   ngOnInit(): void {
-    this.users = USERS;
-    this.createCanvas();
+    this.getUsers();
+  }
+  getUsers(): void {
+    this.userService.getUsers()
+    .subscribe(users => {
+      this.users = users;
+      this.createCanvas();
+    });
   }
 
   private createCanvas() {
@@ -68,6 +77,11 @@ export class TeamOverviewComponent implements OnInit {
       for (let i = 0; i < p.users.length; i++) {
         const circle = p.addRandomCircle();
         circle.text = p.users[i].FirstName[0] + p.users[i].LastName[0];
+
+        circle.onMouseReleased = () => {
+          this.router.navigate(['/user-detail', i]);
+        };
+
         p.circles.add(circle);
       }
       const addButton = p.addRandomCircle();
@@ -127,8 +141,12 @@ export class TeamOverviewComponent implements OnInit {
     dialogRef.beforeClose().subscribe((newUser: User) => {
       if (newUser) {
         this.users.push(newUser);
+        const id = this.userService.createUser(newUser);
         const circle = this.P5.addRandomCircle();
         circle.text = newUser.FirstName[0] + newUser.LastName[0];
+        circle.onMouseReleased = () => {
+          this.router.navigate(['/user-detail', id]);
+        };
         this.P5.circles.add(circle);
       }
     });
