@@ -1,5 +1,5 @@
 import { User } from '../../model/user';
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
@@ -11,7 +11,7 @@ export interface DialogData {
   templateUrl: './new-user-dialog.component.html',
   styleUrls: ['./new-user-dialog.component.css']
 })
-export class NewUserDialogComponent {
+export class NewUserDialogComponent implements OnInit {
   user: User = new User('Sarah', 'Mey');
 
   constructor(public dialogRef: MatDialogRef<NewUserDialogComponent>,
@@ -25,7 +25,6 @@ export class NewUserDialogComponent {
   }
 
   onSubmit() {
-    debugger;
     this.dialogRef.close(this.user);
   }
 

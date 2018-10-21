@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../model/user';
 import { MatDialog } from '../../../node_modules/@angular/material';
-import { USERS } from '../../data/users';
 import { NewUserDialogComponent } from '../new-user-dialog/new-user-dialog.component';
 import * as p5 from 'p5';
 import init from 'vue-p5-play';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-team-overview',
@@ -19,11 +19,18 @@ export class TeamOverviewComponent implements OnInit {
   private circles;
 
   constructor(public dialog: MatDialog,
-    private router: Router) {}
+    private router: Router,
+    private userService: UserService) {}
 
   ngOnInit(): void {
-    this.users = USERS;
-    this.createCanvas();
+    this.getUsers();
+  }
+  getUsers(): void {
+    this.userService.getUsers()
+    .subscribe(users => {
+      this.users = users;
+      this.createCanvas();
+    });
   }
 
   private createCanvas() {
