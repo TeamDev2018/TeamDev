@@ -5,6 +5,7 @@ import { USERS } from '../../data/users';
 import { NewUserDialogComponent } from '../new-user-dialog/new-user-dialog.component';
 import * as p5 from 'p5';
 import init from 'vue-p5-play';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team-overview',
@@ -17,7 +18,8 @@ export class TeamOverviewComponent implements OnInit {
   private P5;
   private circles;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.users = USERS;
@@ -68,6 +70,11 @@ export class TeamOverviewComponent implements OnInit {
       for (let i = 0; i < p.users.length; i++) {
         const circle = p.addRandomCircle();
         circle.text = p.users[i].FirstName[0] + p.users[i].LastName[0];
+
+        circle.onMouseReleased = () => {
+          this.router.navigate(['/user-detail', i]);
+        };
+
         p.circles.add(circle);
       }
       const addButton = p.addRandomCircle();
