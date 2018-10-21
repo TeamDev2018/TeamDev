@@ -16,11 +16,16 @@ import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
+import { TeamOverviewComponent } from './team-overview/team-overview.component';
+import { TeamComponent } from './team/team.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewUserDialogComponent
+    NewUserDialogComponent,
+    TeamOverviewComponent,
+    TeamComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +39,8 @@ import {MatInputModule} from '@angular/material';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
-    AvatarModule
+    AvatarModule,
+    AppRoutingModule
   ],
   entryComponents: [
     NewUserDialogComponent
