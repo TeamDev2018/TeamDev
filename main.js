@@ -395,8 +395,8 @@ var TeamOverviewComponent = /** @class */ (function () {
                 if (this.text) {
                     p.fill('black');
                     p.textAlign(p.CENTER);
-                    p.textSize(this.scale * 40);
-                    p.text(this.text, 0, p.textAscent() / 2);
+                    p.textSize(40);
+                    p.text(this.text, 0, (p.constTextSize) / 2);
                 }
             };
             circle.scale = p.random(0.7, 1);
@@ -411,6 +411,8 @@ var TeamOverviewComponent = /** @class */ (function () {
             p.camera.position.y = p.height / 2;
         };
         p.setup = function () {
+            p.textSize(40);
+            p.constTextSize = p.textAscent();
             var canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
             canvas.parent('p5play');
             var _loop_1 = function (i) {
@@ -801,7 +803,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\TeamDev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\src\main.ts */"./src/main.ts");
 
 
 /***/ })
