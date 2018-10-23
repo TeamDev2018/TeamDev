@@ -414,7 +414,7 @@ var TeamOverviewComponent = /** @class */ (function () {
             p.textSize(40);
             p.constTextSize = p.textAscent();
             var canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
-            p.zoomLevel = Math.sqrt(p.windowWidth * p.windowHeight) / 1000;
+            p.zoomLevel = Math.sqrt(p.windowWidth * p.windowHeight) / Math.sqrt(p.users.length) / 200;
             canvas.parent('p5play');
             var _loop_1 = function (i) {
                 var circle = p.addRandomCircle();
