@@ -40,7 +40,6 @@ export class TeamOverviewComponent implements OnInit {
   private sketch(that: TeamOverviewComponent, p: any) {
     p.users = that.users;
     p.circles = new p.Group();
-
     p.addRandomCircle = () => {
       const circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
 
@@ -53,8 +52,8 @@ export class TeamOverviewComponent implements OnInit {
         if (this.text) {
           p.fill('black');
           p.textAlign(p.CENTER);
-          p.textSize(this.scale * 40);
-          p.text(this.text, 0, p.textAscent() / 2);
+          p.textSize( 40);
+          p.text(this.text, 0,  (p.constTextSize ) / 2);
         }
       };
       circle.scale = p.random(0.7, 1);
@@ -71,6 +70,8 @@ export class TeamOverviewComponent implements OnInit {
     };
 
     p.setup = () => {
+      p.textSize(40);
+      p.constTextSize = p.textAscent();
       const canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
       canvas.parent('p5play');
 
