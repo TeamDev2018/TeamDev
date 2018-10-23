@@ -207,7 +207,7 @@ var AppModule = /** @class */ (function () {
                 _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
                 _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatInputModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__["MatDialogModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_11__["AvatarModule"].forRoot(null),
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_11__["AvatarModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_17__["AppRoutingModule"]
             ],
             entryComponents: [
@@ -396,7 +396,7 @@ var TeamOverviewComponent = /** @class */ (function () {
                     p.fill('black');
                     p.textAlign(p.CENTER);
                     p.textSize(this.scale * 40);
-                    p.text(this.text, 0, 20);
+                    p.text(this.text, 0, p.textAscent() / 2);
                 }
             };
             circle.scale = p.random(0.7, 1);
@@ -440,20 +440,21 @@ var TeamOverviewComponent = /** @class */ (function () {
             for (var i = 0; i < p.allSprites.length; i++) {
                 var s = p.allSprites[i];
                 s.update();
-                if (s.position.x < 0) {
-                    s.position.x = 1;
+                var radius = s.scale * 50;
+                if (s.position.x < radius) {
+                    s.position.x = radius + 1;
                     s.velocity.x = p.abs(s.velocity.x);
                 }
-                if (s.position.x > p.width) {
-                    s.position.x = p.width - 1;
+                if (s.position.x > p.width - radius) {
+                    s.position.x = p.width - radius - 1;
                     s.velocity.x = -p.abs(s.velocity.x);
                 }
-                if (s.position.y < 0) {
-                    s.position.y = 1;
+                if (s.position.y < radius) {
+                    s.position.y = radius + 1;
                     s.velocity.y = p.abs(s.velocity.y);
                 }
-                if (s.position.y > p.height) {
-                    s.position.y = p.height - 1;
+                if (s.position.y > p.height - radius) {
+                    s.position.y = p.height - radius - 1;
                     s.velocity.y = -p.abs(s.velocity.y);
                 }
                 // s.collider.draw();
@@ -800,7 +801,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\TeamDev\src\main.ts */"./src/main.ts");
 
 
 /***/ })
