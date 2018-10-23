@@ -43,7 +43,7 @@ export class TeamOverviewComponent implements OnInit {
     p.addRandomCircle = () => {
       const circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
 
-      circle.setSpeed(p.random(2, 4), p.random(0, 360));
+      circle.setSpeed(p.random(2, 4) * p.zoomLevel, p.random(0, 360));
 
       circle.draw = function() {
 
@@ -56,7 +56,7 @@ export class TeamOverviewComponent implements OnInit {
           p.text(this.text, 0,  (p.constTextSize ) / 2);
         }
       };
-      circle.scale = p.random(0.7, 1);
+      circle.scale = p.random(0.7, 1) * p.zoomLevel;
       circle.setCollider('circle', 0, 0, 50);
       // mass determines the force exchange in case of bounce
       circle.mass = circle.scale;
@@ -73,6 +73,8 @@ export class TeamOverviewComponent implements OnInit {
       p.textSize(40);
       p.constTextSize = p.textAscent();
       const canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
+      p.zoomLevel = Math.sqrt( p.windowWidth *  p.windowHeight ) / 1000;
+
       canvas.parent('p5play');
 
       for (let i = 0; i < p.users.length; i++) {
@@ -90,7 +92,7 @@ export class TeamOverviewComponent implements OnInit {
       addButton.onMouseReleased = () => {
         that.addNewUser();
       };
-      addButton.scale = 1.25;
+      addButton.scale = 1.25 * p.zoomLevel;
       // mass determines the force exchange in case of bounce
       addButton.mass = addButton.scale;
       p.addButton = addButton;
