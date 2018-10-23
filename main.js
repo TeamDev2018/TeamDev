@@ -388,7 +388,7 @@ var TeamOverviewComponent = /** @class */ (function () {
         p.circles = new p.Group();
         p.addRandomCircle = function () {
             var circle = p.createSprite(p.random(0, p.width), p.random(0, p.height));
-            circle.setSpeed(p.random(2, 4), p.random(0, 360));
+            circle.setSpeed(p.random(2, 4) * p.zoomLevel, p.random(0, 360));
             circle.draw = function () {
                 p.fill(this.shapeColor);
                 p.ellipse(0, 0, 100, 100);
@@ -399,7 +399,7 @@ var TeamOverviewComponent = /** @class */ (function () {
                     p.text(this.text, 0, (p.constTextSize) / 2);
                 }
             };
-            circle.scale = p.random(0.7, 1);
+            circle.scale = p.random(0.7, 1) * p.zoomLevel;
             circle.setCollider('circle', 0, 0, 50);
             // mass determines the force exchange in case of bounce
             circle.mass = circle.scale;
@@ -414,6 +414,7 @@ var TeamOverviewComponent = /** @class */ (function () {
             p.textSize(40);
             p.constTextSize = p.textAscent();
             var canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
+            p.zoomLevel = Math.sqrt(p.windowWidth * p.windowHeight) / 1000;
             canvas.parent('p5play');
             var _loop_1 = function (i) {
                 var circle = p.addRandomCircle();
@@ -431,7 +432,7 @@ var TeamOverviewComponent = /** @class */ (function () {
             addButton.onMouseReleased = function () {
                 that.addNewUser();
             };
-            addButton.scale = 1.25;
+            addButton.scale = 1.25 * p.zoomLevel;
             // mass determines the force exchange in case of bounce
             addButton.mass = addButton.scale;
             p.addButton = addButton;
