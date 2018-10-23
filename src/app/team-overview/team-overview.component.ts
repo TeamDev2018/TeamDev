@@ -73,7 +73,7 @@ export class TeamOverviewComponent implements OnInit {
       p.textSize(40);
       p.constTextSize = p.textAscent();
       const canvas = p.createCanvas(p.windowWidth, p.windowHeight / 2);
-      p.zoomLevel = Math.sqrt( p.windowWidth *  p.windowHeight ) / 1000;
+      p.zoomLevel = Math.sqrt( p.windowWidth *  p.windowHeight ) / Math.sqrt(p.users.length)  / 200;
 
       canvas.parent('p5play');
 
