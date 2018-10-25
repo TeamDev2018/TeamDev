@@ -34,6 +34,8 @@ export class TeamOverviewComponent implements OnInit {
   }
 
   private createCanvas() {
+    p5.disableFriendlyErrors = true;
+
     init(p5);
     this.P5 = new p5((p) => { this.sketch(this, p); });
   }

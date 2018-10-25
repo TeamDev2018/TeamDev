@@ -1,0 +1,6 @@
+<div #carousel class="carousel">
+  <a class="carousel-item" *ngIf="!users" style="display:none"><div>&nbsp;</div></a>
+  <a class="carousel-item" *ngFor="let user of users">
+      <ngx-avatar size="200" name="{{user.FirstName}} {{ user.LastName }}"></ngx-avatar>
+  </a>
+</div>

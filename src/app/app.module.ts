@@ -17,17 +17,17 @@ import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.compon
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
-import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { TeamCarouselComponent } from './team-carousel/team-carousel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUserDialogComponent,
     TeamOverviewComponent,
-    TeamComponent,
     UserDetailComponent,
+    TeamCarouselComponent,
   ],
   imports: [
     BrowserModule,
