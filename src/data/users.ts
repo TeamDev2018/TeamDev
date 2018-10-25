@@ -1,6 +1,6 @@
 import { User } from '../model/user';
 export const USERS = new Array<User>(
-    new User('Lukas', 'Anetsberger'),
+    new User('Lukas', 'Anetsberger', 'luke.jpg'),
     new User('Simon', 'Berleb'),
     new User('Sabrina', 'Englmeier'),
     new User('Vanessa', 'Klein'),

@@ -7,33 +7,28 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
-
-import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { TeamCarouselComponent } from './team-carousel/team-carousel.component';
+import { TeamCarouselModule } from './team-carousel/team-carousel.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NewUserDialogComponent,
     TeamOverviewComponent,
-    UserDetailComponent,
-    TeamCarouselComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    FlexLayoutModule,
     MatGridListModule,
     MatToolbarModule,
     MatButtonModule,
@@ -41,8 +36,8 @@ import { TeamCarouselComponent } from './team-carousel/team-carousel.component';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
-    AvatarModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TeamCarouselModule
   ],
   entryComponents: [
     NewUserDialogComponent
