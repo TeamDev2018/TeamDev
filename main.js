@@ -397,7 +397,7 @@ module.exports = ".container {\r\n  height: 100%;\r\n}\r\n\r\n/* carousel */\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" fxLayout=\"column\">\r\n  <div fxLayout=\"row\">\r\n      <div #carousel class=\"carousel\">\r\n          <a class=\"carousel-item\" *ngIf=\"!users\" style=\"display:none\">\r\n            <div>&nbsp;</div>\r\n          </a>\r\n          <app-carousel-item (avatarClicked)=\"avatarClicked($event)\" class=\"carousel-item\" [user]=\"user\" *ngFor=\"let user of users\"></app-carousel-item>\r\n        </div>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" fxLayout=\"column\">\r\n  <div fxLayout=\"row\" fxFlex=\"100%\">\r\n      <div #carousel class=\"carousel\">\r\n          <a class=\"carousel-item\" *ngIf=\"!users\" style=\"display:none\">\r\n            <div>&nbsp;</div>\r\n          </a>\r\n          <app-carousel-item (avatarClicked)=\"avatarClicked($event)\" class=\"carousel-item\" [user]=\"user\" *ngFor=\"let user of users\"></app-carousel-item>\r\n        </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
