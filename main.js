@@ -36,7 +36,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./team-overview/team-overview.component */ "./src/app/team-overview/team-overview.component.ts");
-/* harmony import */ var _team_team_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./team/team.component */ "./src/app/team/team.component.ts");
+/* harmony import */ var _team_carousel_team_carousel_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./team-carousel/team-carousel.component */ "./src/app/team-carousel/team-carousel.component.ts");
 /* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -51,7 +51,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 var routes = [
     { path: 'team-overview', component: _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_2__["TeamOverviewComponent"] },
-    { path: 'team', component: _team_team_component__WEBPACK_IMPORTED_MODULE_3__["TeamComponent"] },
+    { path: 'team', component: _team_carousel_team_carousel_component__WEBPACK_IMPORTED_MODULE_3__["TeamCarouselComponent"] },
     { path: 'user-detail/:id', component: _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_4__["UserDetailComponent"] },
     { path: '', redirectTo: '/team-overview', pathMatch: 'full' }
 ];
@@ -146,26 +146,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/grid-list */ "./node_modules/@angular/material/esm5/grid-list.es5.js");
 /* harmony import */ var _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/toolbar */ "./node_modules/@angular/material/esm5/toolbar.es5.js");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
-/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/fesm5/ngx-avatar.js");
-/* harmony import */ var _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./new-user-dialog/new-user-dialog.component */ "./src/app/new-user-dialog/new-user-dialog.component.ts");
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./team-overview/team-overview.component */ "./src/app/team-overview/team-overview.component.ts");
-/* harmony import */ var _team_team_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./team/team.component */ "./src/app/team/team.component.ts");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/icon */ "./node_modules/@angular/material/esm5/icon.es5.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./new-user-dialog/new-user-dialog.component */ "./src/app/new-user-dialog/new-user-dialog.component.ts");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/esm5/form-field.es5.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./team-overview/team-overview.component */ "./src/app/team-overview/team-overview.component.ts");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! .//app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./user-detail/user-detail.component */ "./src/app/user-detail/user-detail.component.ts");
+/* harmony import */ var _team_carousel_team_carousel_module__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./team-carousel/team-carousel.module */ "./src/app/team-carousel/team-carousel.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
 
 
 
@@ -190,28 +186,26 @@ var AppModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
-                _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_12__["NewUserDialogComponent"],
-                _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_15__["TeamOverviewComponent"],
-                _team_team_component__WEBPACK_IMPORTED_MODULE_16__["TeamComponent"],
-                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_18__["UserDetailComponent"],
+                _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_10__["NewUserDialogComponent"],
+                _team_overview_team_overview_component__WEBPACK_IMPORTED_MODULE_13__["TeamOverviewComponent"],
+                _user_detail_user_detail_component__WEBPACK_IMPORTED_MODULE_15__["UserDetailComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_4__["BrowserAnimationsModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_0__["FormsModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_7__["FlexLayoutModule"],
                 _angular_material_grid_list__WEBPACK_IMPORTED_MODULE_5__["MatGridListModule"],
                 _angular_material_toolbar__WEBPACK_IMPORTED_MODULE_6__["MatToolbarModule"],
-                _angular_material_button__WEBPACK_IMPORTED_MODULE_8__["MatButtonModule"],
-                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_13__["MatFormFieldModule"],
-                _angular_material_icon__WEBPACK_IMPORTED_MODULE_9__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatInputModule"],
-                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_10__["MatDialogModule"],
-                ngx_avatar__WEBPACK_IMPORTED_MODULE_11__["AvatarModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_17__["AppRoutingModule"]
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_11__["MatFormFieldModule"],
+                _angular_material_icon__WEBPACK_IMPORTED_MODULE_8__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_12__["MatInputModule"],
+                _angular_material_dialog__WEBPACK_IMPORTED_MODULE_9__["MatDialogModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_14__["AppRoutingModule"],
+                _team_carousel_team_carousel_module__WEBPACK_IMPORTED_MODULE_16__["TeamCarouselModule"]
             ],
             entryComponents: [
-                _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_12__["NewUserDialogComponent"]
+                _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_10__["NewUserDialogComponent"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -304,6 +298,232 @@ var NewUserDialogComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/team-carousel/carousel-item/carousel-item.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/team-carousel/carousel-item/carousel-item.component.css ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n.header-image {\r\n  background-image: url('no_photo.png');\r\n  background-size: cover;\r\n}\r\n\r\nbutton.mat-button {\r\n  font-size: 30px;\r\n}\r\n\r\nmat-chip {\r\n  border-radius: 0px;\r\n}\r\n\r\nmat-card-title {\r\n  font-size: 16px!important;\r\n  font-weight: bold;\r\n}\r\n\r\n.carousel {\r\n    overflow: hidden;\r\n    position: relative;\r\n    width: 100%;\r\n    height: 100%;\r\n    -webkit-perspective: 500px;\r\n            perspective: 500px;\r\n    -webkit-transform-style: preserve-3d;\r\n            transform-style: preserve-3d;\r\n    -webkit-transform-origin: 0% 50%;\r\n            transform-origin: 0% 50%;\r\n  }\r\n\r\n.carousel.carousel-slider {\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-fixed-item {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 20px;\r\n    z-index: 1;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-fixed-item.with-indicators {\r\n    bottom: 68px;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item {\r\n    width: 100%;\r\n    height: 100%;\r\n    min-height: 400px;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item h2 {\r\n    font-size: 24px;\r\n    font-weight: 500;\r\n    line-height: 32px;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item p {\r\n    font-size: 15px;\r\n  }\r\n\r\n.carousel app-carousel-item .carousel-item {\r\n    visibility: hidden;\r\n    width: 200px;\r\n    height: 200px;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel app-carousel-item .carousel-item > img {\r\n    width: 100%;\r\n  }\r\n\r\n.carousel .indicators {\r\n    position: absolute;\r\n    text-align: center;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    margin: 0;\r\n  }\r\n\r\n.carousel .indicators .indicator-item {\r\n    display: inline-block;\r\n    position: relative;\r\n    cursor: pointer;\r\n    height: 8px;\r\n    width: 8px;\r\n    margin: 24px 4px;\r\n    background-color: rgba(255, 255, 255, 0.5);\r\n    transition: background-color .3s;\r\n    border-radius: 50%;\r\n  }\r\n\r\n.carousel .indicators .indicator-item.active {\r\n    background-color: #fff;\r\n  }\r\n\r\n.carousel.scrolling .carousel-item .materialboxed,\r\n  .carousel .carousel-item:not(.active) .materialboxed {\r\n    pointer-events: none;\r\n  }\r\n\r\n/* rating */\r\n\r\ndiv.rating-container {\r\n  visibility:hidden;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/carousel-item/carousel-item.component.html":
+/*!**************************************************************************!*\
+  !*** ./src/app/team-carousel/carousel-item/carousel-item.component.html ***!
+  \**************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<a>\r\n  <!-- <ngx-avatar size=\"200\" (clickOnAvatar)=\"activateAvatar($event)\" name=\"{{user.FirstName}} {{ user.LastName }}\"></ngx-avatar> -->\r\n  <div fxLayout=\"column\">\r\n    <mat-card class=\"example-card\">\r\n\r\n\r\n      <mat-card-header>\r\n        <div mat-card-avatar class=\"header-image\"></div>\r\n        <mat-card-title>{{ user.FirstName }}</mat-card-title>\r\n        <mat-card-subtitle>{{ user.LastName }}</mat-card-subtitle>\r\n      </mat-card-header>\r\n      <mat-card-content>\r\n        <div fxLayout=\"row\" fxLayoutAlign=\"center\" fxLayout.xs=\"column\">\r\n          <ngx-avatar src=\"../../assets/img/{{user.image}}\" [round]=\"false\" size=\"180\" name=\"{{ user.FirstName }} {{ user.LastName }}\"></ngx-avatar>\r\n        </div>\r\n      </mat-card-content>\r\n      <!-- <mat-card-actions>\r\n                <button mat-button>LIKE</button>\r\n                <button mat-button>SHARE</button>\r\n              </mat-card-actions> -->\r\n\r\n\r\n    </mat-card>\r\n    <br>\r\n    <div class=\"rating-container\" fxLayoutGap=\"10px\" fxLayout=\"column\" fxLayoutAlign=\"center\">\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"center\">\r\n        <button mat-button>#läuftbeimir</button>\r\n      </div>\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"center\">\r\n        <button mat-button>#CoolerTyp</button>\r\n      </div>\r\n      <div fxLayout=\"row\" fxLayoutAlign=\"center stretch\">\r\n        <mat-chip-list>\r\n          <mat-chip *ngFor=\"let attribute of user.Attributes\" (selectionChange)=\"chipSelectChange($event)\" [selected]=\"attribute.active\">#{{attribute.text}}</mat-chip>\r\n        </mat-chip-list>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</a>"
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/carousel-item/carousel-item.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/team-carousel/carousel-item/carousel-item.component.ts ***!
+  \************************************************************************/
+/*! exports provided: CarouselItemComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarouselItemComponent", function() { return CarouselItemComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var src_model_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/model/user */ "./src/model/user.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CarouselItemComponent = /** @class */ (function () {
+    function CarouselItemComponent() {
+        this.avatarClicked = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
+    }
+    CarouselItemComponent.prototype.ngOnInit = function () {
+        console.log(this.user);
+    };
+    CarouselItemComponent.prototype.activateAvatar = function (test) {
+        this.avatarClicked.emit(this.user);
+    };
+    CarouselItemComponent.prototype.chipSelectChange = function (test) {
+        debugger;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", src_model_user__WEBPACK_IMPORTED_MODULE_1__["User"])
+    ], CarouselItemComponent.prototype, "user", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
+        __metadata("design:type", Object)
+    ], CarouselItemComponent.prototype, "avatarClicked", void 0);
+    CarouselItemComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-carousel-item',
+            template: __webpack_require__(/*! ./carousel-item.component.html */ "./src/app/team-carousel/carousel-item/carousel-item.component.html"),
+            styles: [__webpack_require__(/*! ./carousel-item.component.css */ "./src/app/team-carousel/carousel-item/carousel-item.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], CarouselItemComponent);
+    return CarouselItemComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/team-carousel.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/team-carousel/team-carousel.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container {\r\n  height: 100%;\r\n}\r\n\r\n/* carousel */\r\n\r\n.carousel {\r\n    overflow: hidden;\r\n    position: relative;\r\n    width: 100%;\r\n    height: 100%;\r\n    -webkit-perspective: 500px;\r\n            perspective: 500px;\r\n    -webkit-transform-style: preserve-3d;\r\n            transform-style: preserve-3d;\r\n    -webkit-transform-origin: 0% 50%;\r\n            transform-origin: 0% 50%;\r\n  }\r\n\r\n.carousel.carousel-slider {\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-fixed-item {\r\n    position: absolute;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 20px;\r\n    z-index: 1;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-fixed-item.with-indicators {\r\n    bottom: 68px;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item {\r\n    width: 100%;\r\n    height: 100%;\r\n    min-height: 400px;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item h2 {\r\n    font-size: 24px;\r\n    font-weight: 500;\r\n    line-height: 32px;\r\n  }\r\n\r\n.carousel.carousel-slider .carousel-item p {\r\n    font-size: 15px;\r\n  }\r\n\r\n.carousel .carousel-item {\r\n    visibility: hidden;\r\n    width: 300px;\r\n    height: 800px;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n  }\r\n\r\n.carousel .carousel-item > img {\r\n    width: 100%;\r\n  }\r\n\r\n.carousel .indicators {\r\n    position: absolute;\r\n    text-align: center;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    margin: 0;\r\n  }\r\n\r\n.carousel .indicators .indicator-item {\r\n    display: inline-block;\r\n    position: relative;\r\n    cursor: pointer;\r\n    height: 8px;\r\n    width: 8px;\r\n    margin: 24px 4px;\r\n    background-color: rgba(255, 255, 255, 0.5);\r\n    transition: background-color .3s;\r\n    border-radius: 50%;\r\n  }\r\n\r\n.carousel .indicators .indicator-item.active {\r\n    background-color: #fff;\r\n  }\r\n\r\n.carousel.scrolling .carousel-item .materialboxed,\r\n  .carousel .carousel-item:not(.active) .materialboxed {\r\n    pointer-events: none;\r\n  }"
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/team-carousel.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/team-carousel/team-carousel.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\" fxLayout=\"column\">\r\n  <div fxLayout=\"row\" fxFlex=\"90%\">\r\n      <div #carousel class=\"carousel\">\r\n          <a class=\"carousel-item\" *ngIf=\"!users\" style=\"display:none\">\r\n            <div>&nbsp;</div>\r\n          </a>\r\n          <app-carousel-item (avatarClicked)=\"avatarClicked($event)\" class=\"carousel-item\" [user]=\"user\" *ngFor=\"let user of users\"></app-carousel-item>\r\n        </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/team-carousel.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/team-carousel/team-carousel.component.ts ***!
+  \**********************************************************/
+/*! exports provided: TeamCarouselComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeamCarouselComponent", function() { return TeamCarouselComponent; });
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../user.service */ "./src/app/user.service.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var materialize_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! materialize-css */ "./node_modules/materialize-css/dist/js/materialize.js");
+/* harmony import */ var materialize_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(materialize_css__WEBPACK_IMPORTED_MODULE_2__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var TeamCarouselComponent = /** @class */ (function () {
+    function TeamCarouselComponent(userService) {
+        this.userService = userService;
+    }
+    TeamCarouselComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        console.log('parent');
+        this.userService.getUsers()
+            .subscribe(function (users) {
+            _this.users = users;
+            _this.currentUser = _this.users[0];
+            setTimeout(function () {
+                materialize_css__WEBPACK_IMPORTED_MODULE_2__["Carousel"].init(_this.carousel.nativeElement, { padding: 300, numVisible: 10, onCycleTo: function (i) {
+                        console.log(i);
+                    } });
+            }, 0);
+        });
+    };
+    TeamCarouselComponent.prototype.avatarClicked = function (user) {
+        this.currentUser = user;
+    };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])('carousel'),
+        __metadata("design:type", _angular_core__WEBPACK_IMPORTED_MODULE_1__["ElementRef"])
+    ], TeamCarouselComponent.prototype, "carousel", void 0);
+    TeamCarouselComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-team-carousel',
+            template: __webpack_require__(/*! ./team-carousel.component.html */ "./src/app/team-carousel/team-carousel.component.html"),
+            styles: [__webpack_require__(/*! ./team-carousel.component.css */ "./src/app/team-carousel/team-carousel.component.css")]
+        }),
+        __metadata("design:paramtypes", [_user_service__WEBPACK_IMPORTED_MODULE_0__["UserService"]])
+    ], TeamCarouselComponent);
+    return TeamCarouselComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/team-carousel/team-carousel.module.ts":
+/*!*******************************************************!*\
+  !*** ./src/app/team-carousel/team-carousel.module.ts ***!
+  \*******************************************************/
+/*! exports provided: TeamCarouselModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeamCarouselModule", function() { return TeamCarouselModule; });
+/* harmony import */ var ngx_avatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ngx-avatar */ "./node_modules/ngx-avatar/fesm5/ngx-avatar.js");
+/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./carousel-item/carousel-item.component */ "./src/app/team-carousel/carousel-item/carousel-item.component.ts");
+/* harmony import */ var _team_carousel_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./team-carousel.component */ "./src/app/team-carousel/team-carousel.component.ts");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/esm5/card.es5.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/esm5/button.es5.js");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/chips */ "./node_modules/@angular/material/esm5/chips.es5.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+
+
+
+var TeamCarouselModule = /** @class */ (function () {
+    function TeamCarouselModule() {
+    }
+    TeamCarouselModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"],
+                ngx_avatar__WEBPACK_IMPORTED_MODULE_0__["AvatarModule"],
+                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_1__["FlexLayoutModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_6__["MatCardModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_7__["MatButtonModule"],
+                _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__["MatChipsModule"]
+            ],
+            declarations: [_team_carousel_component__WEBPACK_IMPORTED_MODULE_5__["TeamCarouselComponent"], _carousel_item_carousel_item_component__WEBPACK_IMPORTED_MODULE_4__["CarouselItemComponent"]]
+        })
+    ], TeamCarouselModule);
+    return TeamCarouselModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/team-overview/team-overview.component.css":
 /*!***********************************************************!*\
   !*** ./src/app/team-overview/team-overview.component.css ***!
@@ -311,7 +531,7 @@ var NewUserDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container > .item {\r\n    margin-top: 5px;\r\n}\r\n\r\na#start {\r\n    padding: 15px;\r\n    font-size: 3em;\r\n}"
+module.exports = ".container > .item {\r\n    margin-top: 5px;\r\n}\r\n\r\na#start {\r\n    padding: 15px;\r\n    font-size: 3em;\r\n    width: 100%;\r\n}"
 
 /***/ }),
 
@@ -322,7 +542,7 @@ module.exports = ".container > .item {\r\n    margin-top: 5px;\r\n}\r\n\r\na#sta
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" fxLayout=\"row\" id=\"p5play\">\r\n  \r\n</div>\r\n<div style=\"margin-top:50px\" class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\">\r\n\r\n</div>\r\n<div class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n  <div class=\"container\" fxFlex=\"100\" fxLayout=\"column\">\r\n    <a routerLink=\"/team\" id=\"start\" mat-raised-button color=\"primary\">Let's go!</a>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" fxLayout=\"row\" id=\"p5play\">\r\n  \r\n</div>\r\n<div style=\"margin-top:50px\" class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\">\r\n\r\n</div>\r\n<div class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n  <div class=\"container\" fxFlex=\"100%\" fxLayout=\"column\">\r\n    <a routerLink=\"/team\" id=\"start\" mat-raised-button color=\"primary\">Let's go!</a>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -379,6 +599,7 @@ var TeamOverviewComponent = /** @class */ (function () {
     };
     TeamOverviewComponent.prototype.createCanvas = function () {
         var _this = this;
+        p5__WEBPACK_IMPORTED_MODULE_3__["disableFriendlyErrors"] = true;
         Object(vue_p5_play__WEBPACK_IMPORTED_MODULE_4__["default"])(p5__WEBPACK_IMPORTED_MODULE_3__);
         this.P5 = new p5__WEBPACK_IMPORTED_MODULE_3__(function (p) { _this.sketch(_this, p); });
     };
@@ -498,69 +719,6 @@ var TeamOverviewComponent = /** @class */ (function () {
             _user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"]])
     ], TeamOverviewComponent);
     return TeamOverviewComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/team/team.component.css":
-/*!*****************************************!*\
-  !*** ./src/app/team/team.component.css ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/team/team.component.html":
-/*!******************************************!*\
-  !*** ./src/app/team/team.component.html ***!
-  \******************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\r\n  team works!\r\n</p>\r\n"
-
-/***/ }),
-
-/***/ "./src/app/team/team.component.ts":
-/*!****************************************!*\
-  !*** ./src/app/team/team.component.ts ***!
-  \****************************************/
-/*! exports provided: TeamComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeamComponent", function() { return TeamComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var TeamComponent = /** @class */ (function () {
-    function TeamComponent() {
-    }
-    TeamComponent.prototype.ngOnInit = function () {
-    };
-    TeamComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-team',
-            template: __webpack_require__(/*! ./team.component.html */ "./src/app/team/team.component.html"),
-            styles: [__webpack_require__(/*! ./team.component.css */ "./src/app/team/team.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], TeamComponent);
-    return TeamComponent;
 }());
 
 
@@ -715,9 +873,11 @@ var UserService = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "USERS", function() { return USERS; });
-/* harmony import */ var _model_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../model/user */ "./src/model/user.ts");
+/* harmony import */ var _model_attribute__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../model/attribute */ "./src/model/attribute.ts");
+/* harmony import */ var _model_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../model/user */ "./src/model/user.ts");
 
-var USERS = new Array(new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Lukas', 'Anetsberger'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Simon', 'Berleb'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Sabrina', 'Englmeier'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Vanessa', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Martin', 'Wagner'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Kristina', 'Raith'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Rolf', 'Daniel'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Uwe', 'Daniel'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Marie', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Lukas', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Patrick', 'Schwarz'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Florian', 'Bauer'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Evi', 'Heuer'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Franziska', 'Dietl'), new _model_user__WEBPACK_IMPORTED_MODULE_0__["User"]('Carola', 'Vaitl'));
+
+var USERS = new Array(new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Lukas', 'Anetsberger', new Array(new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('gutDrauf', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('motivation', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('kollegial', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('treu', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('spaßvogel', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('ehrlich', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('direkt', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('schläger', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('egoist', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('hure', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('keineAhnung', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('uhnkreativ', false)), 'no-photo.jpg'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Simon', 'Berleb', new Array(new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('ehrlich', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('direkt', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('schläger', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('egoist', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('hure', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('keineAhnung', false), new _model_attribute__WEBPACK_IMPORTED_MODULE_0__["Attribute"]('uhnkreativ', false))), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Sabrina', 'Englmeier'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Vanessa', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Martin', 'Wagner'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Kristina', 'Raith'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Rolf', 'Daniel'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Uwe', 'Daniel'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Marie', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Lukas', 'Klein'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Patrick', 'Schwarz'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Florian', 'Bauer'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Evi', 'Heuer'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Franziska', 'Dietl'), new _model_user__WEBPACK_IMPORTED_MODULE_1__["User"]('Carola', 'Vaitl'));
 
 
 /***/ }),
@@ -775,6 +935,27 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 
 /***/ }),
 
+/***/ "./src/model/attribute.ts":
+/*!********************************!*\
+  !*** ./src/model/attribute.ts ***!
+  \********************************/
+/*! exports provided: Attribute */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Attribute", function() { return Attribute; });
+var Attribute = /** @class */ (function () {
+    function Attribute(text, active) {
+        this.text = text;
+    }
+    return Attribute;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/model/user.ts":
 /*!***************************!*\
   !*** ./src/model/user.ts ***!
@@ -786,9 +967,12 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
 var User = /** @class */ (function () {
-    function User(FirstName, LastName) {
+    function User(FirstName, LastName, Attributes, image) {
+        if (Attributes === void 0) { Attributes = new Array(); }
         this.FirstName = FirstName;
         this.LastName = LastName;
+        this.Attributes = Attributes;
+        this.image = image;
     }
     return User;
 }());
@@ -804,7 +988,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\TeamDev\src\main.ts */"./src/main.ts");
 
 
 /***/ })

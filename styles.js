@@ -48,7 +48,7 @@ module.exports = ".mat-elevation-z0{box-shadow:0 0 0 0 rgba(0,0,0,.2),0 0 0 0 rg
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\r\n\r\nhtml, body { height: 100%; }\r\n\r\nbody { margin: 0; font-family: 'Roboto', sans-serif; }\r\n"
+module.exports = "/* You can add global styles to this file, and also import other style files */\r\nhtml, body { height: 100%; }\r\nbody { margin: 0; font-family: 'Roboto', sans-serif; }\r\napp-carousel-item.active > a > div > .rating-container {\r\n    visibility: visible!important;\r\n}"
 
 /***/ }),
 
@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-module.exports = __webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\src\styles.css */"./src/styles.css");
+__webpack_require__(/*! C:\TeamDev\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+module.exports = __webpack_require__(/*! C:\TeamDev\src\styles.css */"./src/styles.css");
 
 
 /***/ })
