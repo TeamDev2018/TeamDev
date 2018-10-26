@@ -1,3 +1,22 @@
+
+.header-image {
+  background-image: url('../../../assets/img/no_photo.png');
+  background-size: cover;
+}
+
+button.mat-button {
+  font-size: 30px;
+}
+
+mat-chip {
+  border-radius: 0px;
+}
+
+mat-card-title {
+  font-size: 16px!important;
+  font-weight: bold;
+}
+
 .carousel {
     overflow: hidden;
     position: relative;
@@ -90,3 +109,9 @@
   .carousel .carousel-item:not(.active) .materialboxed {
     pointer-events: none;
   }
+
+/* rating */
+
+div.rating-container {
+  visibility:hidden;
+}

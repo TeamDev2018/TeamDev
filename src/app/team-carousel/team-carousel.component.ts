@@ -24,7 +24,7 @@ export class TeamCarouselComponent implements OnInit {
       this.users = users;
       this.currentUser = this.users[0];
       setTimeout(() => {
-        M.Carousel.init(this.carousel.nativeElement, {padding: 300, numVisible: 10, shift: -50, onCycleTo: (i) => {
+        M.Carousel.init(this.carousel.nativeElement, {padding: 300, numVisible: 10, onCycleTo: (i) => {
           console.log(i);
         }});
       }, 0);

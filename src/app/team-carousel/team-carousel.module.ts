@@ -5,13 +5,17 @@ import { CommonModule } from '@angular/common';
 import { CarouselItemComponent } from './carousel-item/carousel-item.component';
 import { TeamCarouselComponent } from './team-carousel.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
     CommonModule,
     AvatarModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule,
+    MatChipsModule
   ],
   declarations: [TeamCarouselComponent, CarouselItemComponent]
 })

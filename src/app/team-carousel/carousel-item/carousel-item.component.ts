@@ -19,4 +19,8 @@ export class CarouselItemComponent implements OnInit {
   activateAvatar(test: any) {
     this.avatarClicked.emit(this.user);
   }
+
+  chipSelectChange(test: any) {
+    debugger;
+  }
 }
