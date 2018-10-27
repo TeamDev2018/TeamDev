@@ -2,7 +2,7 @@
   "name": "team-dev",
   "version": "0.0.0",
   "scripts": {
-    "ngh": "ng build && npx ngh --dir dist/TeamDev",
+    "ngh": "ng build --prod && npx ngh --dir dist/TeamDev",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
