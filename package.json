@@ -25,7 +25,7 @@
     "@angular/router": "^6.1.0",
     "angular-cli-ghpages": "^0.5.3",
     "core-js": "^2.5.4",
-    "ngx-avatar": "^3.0.0",
+    "ngx-avatar": "^3.1.1",
     "p5": "^0.7.2",
     "rxjs": "^6.0.0",
     "vue-p5-play": "^1.0.0",
