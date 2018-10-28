@@ -9,7 +9,7 @@ export interface DialogData {
 @Component({
   selector: 'app-new-user-dialog',
   templateUrl: './new-user-dialog.component.html',
-  styleUrls: ['./new-user-dialog.component.css']
+  styleUrls: ['./new-user-dialog.component.scss']
 })
 export class NewUserDialogComponent implements OnInit {
   user: User = new User('Sarah', 'Mey');

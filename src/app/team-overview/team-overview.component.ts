@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 @Component({
   selector: 'app-team-overview',
   templateUrl: './team-overview.component.html',
-  styleUrls: ['./team-overview.component.css']
+  styleUrls: ['./team-overview.component.scss']
 })
 export class TeamOverviewComponent implements OnInit {
 
