@@ -55,11 +55,20 @@
   
   .carousel .carousel-item {
     visibility: hidden;
-    width: 300px;
-    height: 800px;
+    width: 20em;
+    height: 50em;
     position: absolute;
     top: 0;
     left: 0;
+  }
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    /* Styles */
+    .carousel .carousel-item {
+      max-width: 90%;
+      min-width: 80%;
+      height: 30em;
+    }
   }
   
   .carousel .carousel-item > img {
