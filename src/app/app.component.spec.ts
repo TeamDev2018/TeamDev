@@ -1,11 +1,19 @@
+import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { AppRoutingModule } from './app-routing.module';
+import { AppModule } from './app.module';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
       ],
+      imports: [
+        MatToolbarModule,
+        AppRoutingModule,
+        AppModule
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
@@ -22,6 +30,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to TeamDev!');
+    expect(compiled.querySelector('h1').textContent).toContain('TeamDev');
   }));
 });

@@ -1,13 +1,12 @@
 import { User } from '../../model/user';
 import { Component, Inject, OnInit } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 export interface DialogData {
   user: User;
 }
 
 @Component({
-  selector: 'app-new-user-dialog',
   templateUrl: './new-user-dialog.component.html',
   styleUrls: ['./new-user-dialog.component.scss']
 })
