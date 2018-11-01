@@ -25,8 +25,10 @@ export class TeamOverviewComponent implements OnInit {
   getUsers(): void {
     this.userService.getUsers()
     .subscribe(users => {
-      users.map(user => {
-        user.AvatarLink = this.getPreviewUrl();
+      users.forEach(user => {
+        if (!user.AvatarLink) {
+          user.AvatarLink = this.getPreviewUrl();
+        }
       })
       this.users = users;
     });
