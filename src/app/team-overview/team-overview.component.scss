@@ -5,6 +5,17 @@
 .container.background {
     background-image: url('../../assets/img/background.png');
     height:70%;
+    overflow: hidden;
+    overflow-x: scroll
+}
+
+div.avatar {
+
+    margin-top: -15em;
+
+    img {
+        max-width: 20em;
+    }
 }
 
 a#start {

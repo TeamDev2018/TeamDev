@@ -1,13 +1,18 @@
 <div class="container background" fxLayout="row">
   <div fxLayout="column" fxFlex="100%">
-    <div fxLayout="row">
-      <div fxLayout="column" fxLayoutAlign="start center" fxFlex="100%">
-        <img src="../../assets/img/TeamDev-logo.png" alt="invalid pic">
+    <!-- <div fxLayout="row"> -->
+    <div fxLayoutAlign="center start" fxFlex="100%">
+      <img src="../../assets/img/TeamDev-logo.png" alt="invalid pic">
+    </div>
+    <div fxLayoutAlign="center" *ngIf="users">
+      <div class="avatar" *ngFor="let user of users">
+        <img src="{{user.AvatarLink}}" alt="invalid pic">
       </div>
     </div>
-    <div fxLayout="row">
+    <!-- </div> -->
+    <!-- <div fxLayout="row" fxLayoutAlign="center start"> -->
 
-    </div>
+    <!-- </div> -->
   </div>
 </div>
 <div style="margin-top:20px" class="container" fxLayoutAlign="center" fxLayout="row">
