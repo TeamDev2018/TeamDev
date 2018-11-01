@@ -1,10 +1,34 @@
 
-<div class="container" fxLayoutAlign="center" fxLayout="column" fxLayoutGap="10px">
+<div class="container" fxLayoutAlign="center" fxLayout="column">
     <form>
-      <div class="form-group">
+        <div class="form-group">
+            <label for="style">Style</label>
+            <mat-radio-group name="style" [(ngModel)]="style" (change)="styleChanged()">
+                <mat-radio-button *ngFor="let style of listStyles; let i=index" [value]="i">{{style[0]}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="form-group">
             <label for="gender">Gender</label>
             <mat-radio-group name="gender" [(ngModel)]="gender" (change)="genderChanged()">
                 <mat-radio-button *ngFor="let gender of listGenders; let i=index" [value]="i">{{gender[0]}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="form-group">
+            <label for="brand">Brand</label>
+            <mat-radio-group name="brand" [(ngModel)]="brand" (change)="brandChanged()">
+                <mat-radio-button *ngFor="let brand of listBrands; let i=index" [value]="i">{{brand.name}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="form-group">
+            <label for="outfit">Outfit</label>
+            <mat-radio-group name="outfit" [(ngModel)]="outfit">
+                <mat-radio-button *ngFor="let outfit of listOutfits" [value]="outfit.id">{{outfit.outfit}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="form-group" *ngFor="let trait of listTraits; let i=index">
+            <label for="trait.key">{{trait.key}}</label>
+            <mat-radio-group name="{{trait.key}}" [(ngModel)]="traits[i][1]">
+                <mat-radio-button *ngFor="let option of trait.options" [value]="option.value">{{option.value}}</mat-radio-button>
             </mat-radio-group>
         </div>
     </form>
@@ -19,4 +43,10 @@
         [traits]="traits"
         [outfit]="outfit"
         ></app-bitmoji>
+</div>
+<div class="form-group">
+    <label for="pose">Pose</label>
+    <mat-radio-group name="pose" [(ngModel)]="pose">
+        <mat-radio-button *ngFor="let pose of listPoses" [value]="pose">{{pose}}</mat-radio-button>
+    </mat-radio-group>
 </div>
