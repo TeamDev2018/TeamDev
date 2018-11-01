@@ -25,10 +25,9 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "core-js": "^2.5.4",
+    "libmoji": "^2.3.0",
     "ngx-avatar": "^3.1.1",
-    "p5": "^0.7.2",
     "rxjs": "^6.0.0",
-    "vue-p5-play": "^1.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
