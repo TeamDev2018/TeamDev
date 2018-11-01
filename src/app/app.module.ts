@@ -20,6 +20,7 @@ import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { BitmojiComponent } from './bitmoji/bitmoji.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     TeamOverviewComponent,
     TeamComponent,
     UserDetailComponent,
+    BitmojiComponent,
   ],
   imports: [
     BrowserModule,
