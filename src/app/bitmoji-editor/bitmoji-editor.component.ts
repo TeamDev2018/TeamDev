@@ -42,7 +42,6 @@ export class BitmojiEditorComponent implements OnInit {
       this.style = randInt(3);
     }
     this.listTraits = getTraits(genders[this.gender][0], styles[this.style][0]);
-    debugger;
     if (!this.traits) {
       this.traits = randTraits(this.listTraits);
     }
