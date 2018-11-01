@@ -1,0 +1,22 @@
+
+<div class="container" fxLayoutAlign="center" fxLayout="column" fxLayoutGap="10px">
+    <form>
+      <div class="form-group">
+            <label for="gender">Gender</label>
+            <mat-radio-group name="gender" [(ngModel)]="gender" (change)="genderChanged()">
+                <mat-radio-button *ngFor="let gender of listGenders; let i=index" [value]="i">{{gender[0]}}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+    </form>
+</div>
+<div class="container" fxLayoutAlign="center" fxLayout="column" fxLayoutGap="10px">
+    <app-bitmoji 
+        [pose]="pose"
+        [scale]="scale"
+        [gender]="gender"
+        [style]="style"
+        [rotation]="rotation"
+        [traits]="traits"
+        [outfit]="outfit"
+        ></app-bitmoji>
+</div>

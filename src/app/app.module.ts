@@ -15,12 +15,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatRadioModule} from '@angular/material';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BitmojiComponent } from './bitmoji/bitmoji.component';
+import { BitmojiEditorComponent } from './bitmoji-editor/bitmoji-editor.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BitmojiComponent } from './bitmoji/bitmoji.component';
     TeamComponent,
     UserDetailComponent,
     BitmojiComponent,
+    BitmojiEditorComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,7 @@ import { BitmojiComponent } from './bitmoji/bitmoji.component';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
+    MatRadioModule,
     AvatarModule,
     AppRoutingModule
   ],
