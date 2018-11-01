@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges, DoCheck } from '@angular/core';
 import { buildPreviewUrl, Traits, genders, styles, randTraits, randOutfit,
   randInt, getTraits, getBrands, getOutfits, randBrand } from 'libmoji';
 
@@ -7,7 +7,7 @@ import { buildPreviewUrl, Traits, genders, styles, randTraits, randOutfit,
   templateUrl: './bitmoji.component.html',
   styleUrls: ['./bitmoji.component.scss']
 })
-export class BitmojiComponent implements OnInit, OnChanges {
+export class BitmojiComponent implements OnInit, OnChanges, DoCheck {
   url: String;
   @Input()pose: string;
   @Input()scale: number;
@@ -46,6 +46,10 @@ export class BitmojiComponent implements OnInit, OnChanges {
     this.url = buildPreviewUrl(this.pose, this.scale, genders[this.gender][1], styles[this.style][1], this.rotation, this.traits, this.outfit);
   }
   ngOnChanges(changes: SimpleChanges): void {
+    // tslint:disable-next-line:max-line-length
+    this.url = buildPreviewUrl(this.pose, this.scale, genders[this.gender][1], styles[this.style][1], this.rotation, this.traits, this.outfit);
+  }
+  ngDoCheck(): void {
     // tslint:disable-next-line:max-line-length
     this.url = buildPreviewUrl(this.pose, this.scale, genders[this.gender][1], styles[this.style][1], this.rotation, this.traits, this.outfit);
   }

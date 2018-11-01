@@ -1,6 +1,7 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import 'hammerjs';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,13 +16,14 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule, MatRadioModule} from '@angular/material';
+import {MatInputModule, MatRadioModule, MatSliderModule} from '@angular/material';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { BitmojiComponent } from './bitmoji/bitmoji.component';
 import { BitmojiEditorComponent } from './bitmoji-editor/bitmoji-editor.component';
+import { ArraySliderComponent } from './array-slider/array-slider.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { BitmojiEditorComponent } from './bitmoji-editor/bitmoji-editor.componen
     UserDetailComponent,
     BitmojiComponent,
     BitmojiEditorComponent,
+    ArraySliderComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,7 @@ import { BitmojiEditorComponent } from './bitmoji-editor/bitmoji-editor.componen
     FlexLayoutModule,
     MatGridListModule,
     MatToolbarModule,
+    MatSliderModule,
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
