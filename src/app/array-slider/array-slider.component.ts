@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-array-slider',
@@ -11,8 +11,9 @@ export class ArraySliderComponent implements OnInit, OnChanges {
   @Input()
   values: [];
   @Input()
-  @Output()
   current;
+  @Output()
+  currentChange = new EventEmitter<object>();
   @Output()
   index: number;
   max: number;
@@ -37,8 +38,12 @@ export class ArraySliderComponent implements OnInit, OnChanges {
   }
   onChange() {
     this.current = ( this.field ? this.values[this.index][this.field] : this.values[this.index]);
+    this.currentChange.emit(this.current);
   }
   format(field, values: [], value: number ) {
+    if (!value) {
+      value = 0;
+    }
     let formated = values ? ( value ? values[value] : '' ) : '' ;
     if (formated && field) {
       formated = formated[field];
