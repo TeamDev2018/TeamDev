@@ -29,9 +29,8 @@ export class TeamOverviewComponent implements OnInit {
         if (!user.AvatarLink) {
           user.AvatarLink = this.getPreviewUrl();
         }
-
-        this.users.push(user);
       })
+      this.users = users;
     });
   }
 
