@@ -1,0 +1,20 @@
+.container.background {
+    background-image: url('../../assets/img/background.png');
+    height:25%;
+    overflow: hidden;
+}
+
+div.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+img {
+    max-width: 10em;
+    max-height: 10em;
+}
+
+img.card-header {
+    max-height: 5em;
+}

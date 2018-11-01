@@ -1,3 +1,24 @@
-<p>
-  team works!
-</p>
+<div class="container background" fxLayout="row">
+  <div fxLayout="column" fxFlex="100%">
+    <div fxLayoutAlign="center" *ngIf="users">
+      <div class="avatar" *ngFor="let user of users">
+        <img src="{{user.AvatarLinkHead}}" alt="invalid pic">
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngFor="let user of users" fxLayout="row">
+  <div fxLayout="column" fxFlex="100%">
+    <div fxLayoutAlign="center start">
+      <mat-card style="min-width: 50%">
+        <mat-card-header>
+          <mat-card-title>{{user.FirstName}}</mat-card-title>
+          <mat-card-subtitle>{{user.LastName}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <img mat-card-image style="min-width:30em; min-height: 30em;" src="{{user.AvatarLink}}" alt="Photo of a Shiba Inu">
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
