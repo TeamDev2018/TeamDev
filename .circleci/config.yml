@@ -4,7 +4,52 @@
 #
 version: 2
 jobs:
+  test:
+    docker:
+      # specify the version you desire here
+      # - image: circleci/node:4.8.2
+      - image: circleci/node:10.12.0-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Test
+          command: ng test --watch=false
+      - run:
+          name: E2E
+          command: ng e2e
   build:
+    docker:
+      # specify the version you desire here
+      # - image: circleci/node:4.8.2
+      - image: circleci/node:10.12.0-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: build
+          command: ng build
+  deploy:
     docker:
       # specify the version you desire here
       # - image: circleci/node:4.8.2
@@ -24,8 +69,29 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
-          name: Test
-          command: ng test --watch=false
+          name: build
+          command: ng build
       - run:
-          name: E2E
-          command: ng e2e
+          name: deploy on gh-pages
+          command: ngh --dir dist/TeamDev --token $TOKEN
+workflows:
+  version: 2
+  test_build:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+  deploy:
+    triggers:
+      schedule: 
+        cron: "0 6 * * *"
+        filters:
+          branches:
+            only: master
