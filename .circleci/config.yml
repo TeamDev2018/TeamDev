@@ -89,6 +89,8 @@ workflows:
               ignore:
                 - gh-pages
   deploy:
+    jobs:
+      - deploy
     triggers:
       schedule: 
         cron: "0 6 * * *"
