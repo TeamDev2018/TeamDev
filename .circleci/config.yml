@@ -103,7 +103,7 @@ jobs:
           command: ng build --base-href "https://teamdev2018.github.io/TeamDev/"
       - run:
           name: deploy on gh-pages
-          command: npx ngh --dir=dist/TeamDev --token $GH_TOKEN
+          command: npx ngh --dir=dist/TeamDev
 workflows:
   version: 2
   deployment_test:
