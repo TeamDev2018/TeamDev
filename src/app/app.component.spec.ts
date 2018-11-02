@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppModule } from './app.module';
+import { APP_BASE_HREF } from '@angular/common';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -11,9 +12,9 @@ describe('AppComponent', () => {
       ],
       imports: [
         MatToolbarModule,
-        AppRoutingModule,
         AppModule
-      ]
+      ],
+      providers: [{provide: APP_BASE_HREF , useValue: '/']
     }).compileComponents();
   }));
   it('should create the app', async(() => {

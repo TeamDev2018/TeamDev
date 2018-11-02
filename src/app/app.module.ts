@@ -48,7 +48,6 @@ import { APP_BASE_HREF } from '@angular/common';
   entryComponents: [
     NewUserDialogComponent
   ],
-  providers: [{provide: APP_BASE_HREF, useValue: '/TeamDev'}],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
