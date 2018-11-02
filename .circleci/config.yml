@@ -89,11 +89,11 @@ workflows:
               ignore:
                 - gh-pages
   deploy:
+    triggers:
+      - schedule: 
+          cron: "0 6 * * *"
+          filters:
+            branches:
+              only: master
     jobs:
       - deploy
-    triggers:
-      schedule: 
-        cron: "0 6 * * *"
-        filters:
-          branches:
-            only: master
