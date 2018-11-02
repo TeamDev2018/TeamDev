@@ -104,9 +104,9 @@ jobs:
       - run:
           name: deploy on gh-pages
           command: |
-          git config --global user.email "circleci@github.com"
-          git config --global user.name "CircleCI"
-          npx ngh --dir=dist/TeamDev
+            git config --global user.email "circleci@github.com"
+            git config --global user.name "CircleCI"
+            npx ngh --dir=dist/TeamDev
 workflows:
   version: 2
   deployment_test:
