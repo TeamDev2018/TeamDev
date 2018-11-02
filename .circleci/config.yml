@@ -100,7 +100,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: build
-          command: ng build --base-href "https://teamdev2018.github.io/TeamDev/"
+          command: ng build --prod --base-href "https://teamdev2018.github.io/TeamDev/"
       - run:
           name: deploy on gh-pages
           command: |
