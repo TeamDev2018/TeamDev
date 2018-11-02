@@ -10,6 +10,6 @@ jobs:
       - image: circleci/node:4.8.2
       # - image: circleci/node:10.12.0-browsers
     steps:
-      . run: echo "Hello World"
+      - run: echo "Hello World"
       - checkout
-      . run: echo "After checkout"
+      - run: echo "After checkout"
