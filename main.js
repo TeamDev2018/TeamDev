@@ -213,25 +213,13 @@ var AppModule = /** @class */ (function () {
             entryComponents: [
                 _new_user_dialog_new_user_dialog_component__WEBPACK_IMPORTED_MODULE_12__["NewUserDialogComponent"]
             ],
-            providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]],
         })
     ], AppModule);
     return AppModule;
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/new-user-dialog/new-user-dialog.component.css":
-/*!***************************************************************!*\
-  !*** ./src/app/new-user-dialog/new-user-dialog.component.css ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "form {\r\n    width: 100%;\r\n    text-align: center;\r\n}\r\n\r\nbutton {\r\n    width: 50%;\r\n    margin-top: 1em;\r\n}\r\n\r\nh1 {\r\n    font-size: 3em;\r\n    text-align: center;\r\n    margin-bottom: 1em;\r\n}"
 
 /***/ }),
 
@@ -242,7 +230,18 @@ module.exports = "form {\r\n    width: 100%;\r\n    text-align: center;\r\n}\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>Team verstärken</h1>\r\n<div class=\"container\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <form (ngSubmit)=\"onSubmit()\" #form=\"ngForm\" novalidate>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"firstname\">Vorname</mat-label>\r\n      <input [(ngModel)]=\"user.FirstName\" id=\"firstname\" name=\"firstname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"lastname\">Nachname</mat-label>\r\n      <input [(ngModel)]=\"user.LastName\" id=\"lastname\" name=\"lastname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <button type=\"submit\" [disabled]=\"!form.form.valid\" mat-raised-button color=\"primary\">Mitglied hinzufügen</button>\r\n  </form>\r\n</div>"
+module.exports = "<h1 mat-dialog-title>Team verstärken</h1>\r\n<div class=\"container\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"firstname\">Vorname</mat-label>\r\n      <input [(ngModel)]=\"user.FirstName\" id=\"firstname\" name=\"firstname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"lastname\">Nachname</mat-label>\r\n      <input [(ngModel)]=\"user.LastName\" id=\"lastname\" name=\"lastname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <button type=\"submit\" [disabled]=\"!form.form.valid\" mat-raised-button color=\"primary\">Mitglied hinzufügen</button>\r\n  </form>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/new-user-dialog/new-user-dialog.component.scss":
+/*!****************************************************************!*\
+  !*** ./src/app/new-user-dialog/new-user-dialog.component.scss ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "form {\n  width: 100%;\n  text-align: center; }\n\nbutton {\n  width: 50%;\n  margin-top: 1em; }\n\nh1 {\n  font-size: 3em;\n  text-align: center;\n  margin-bottom: 1em; }\n"
 
 /***/ }),
 
@@ -290,9 +289,8 @@ var NewUserDialogComponent = /** @class */ (function () {
     };
     NewUserDialogComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-new-user-dialog',
             template: __webpack_require__(/*! ./new-user-dialog.component.html */ "./src/app/new-user-dialog/new-user-dialog.component.html"),
-            styles: [__webpack_require__(/*! ./new-user-dialog.component.css */ "./src/app/new-user-dialog/new-user-dialog.component.css")]
+            styles: [__webpack_require__(/*! ./new-user-dialog.component.scss */ "./src/app/new-user-dialog/new-user-dialog.component.scss")]
         }),
         __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
         __metadata("design:paramtypes", [_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
@@ -304,17 +302,6 @@ var NewUserDialogComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/team-overview/team-overview.component.css":
-/*!***********************************************************!*\
-  !*** ./src/app/team-overview/team-overview.component.css ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".container > .item {\r\n    margin-top: 5px;\r\n}\r\n\r\na#start {\r\n    padding: 15px;\r\n    font-size: 3em;\r\n}"
-
-/***/ }),
-
 /***/ "./src/app/team-overview/team-overview.component.html":
 /*!************************************************************!*\
   !*** ./src/app/team-overview/team-overview.component.html ***!
@@ -323,6 +310,17 @@ module.exports = ".container > .item {\r\n    margin-top: 5px;\r\n}\r\n\r\na#sta
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"container\" fxLayout=\"row\" id=\"p5play\">\r\n  \r\n</div>\r\n<div style=\"margin-top:50px\" class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\">\r\n\r\n</div>\r\n<div class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n  <div class=\"container\" fxFlex=\"100\" fxLayout=\"column\">\r\n    <a routerLink=\"/team\" id=\"start\" mat-raised-button color=\"primary\">Let's go!</a>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/team-overview/team-overview.component.scss":
+/*!************************************************************!*\
+  !*** ./src/app/team-overview/team-overview.component.scss ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container > .item {\n  margin-top: 5px; }\n\na#start {\n  padding: 15px;\n  font-size: 3em; }\n"
 
 /***/ }),
 
@@ -491,7 +489,7 @@ var TeamOverviewComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-team-overview',
             template: __webpack_require__(/*! ./team-overview.component.html */ "./src/app/team-overview/team-overview.component.html"),
-            styles: [__webpack_require__(/*! ./team-overview.component.css */ "./src/app/team-overview/team-overview.component.css")]
+            styles: [__webpack_require__(/*! ./team-overview.component.scss */ "./src/app/team-overview/team-overview.component.scss")]
         }),
         __metadata("design:paramtypes", [_node_modules_angular_material__WEBPACK_IMPORTED_MODULE_1__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
@@ -504,17 +502,6 @@ var TeamOverviewComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/team/team.component.css":
-/*!*****************************************!*\
-  !*** ./src/app/team/team.component.css ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
 /***/ "./src/app/team/team.component.html":
 /*!******************************************!*\
   !*** ./src/app/team/team.component.html ***!
@@ -523,6 +510,17 @@ module.exports = ""
 /***/ (function(module, exports) {
 
 module.exports = "<p>\r\n  team works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/team/team.component.scss":
+/*!******************************************!*\
+  !*** ./src/app/team/team.component.scss ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
 
 /***/ }),
 
@@ -556,7 +554,7 @@ var TeamComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-team',
             template: __webpack_require__(/*! ./team.component.html */ "./src/app/team/team.component.html"),
-            styles: [__webpack_require__(/*! ./team.component.css */ "./src/app/team/team.component.css")]
+            styles: [__webpack_require__(/*! ./team.component.scss */ "./src/app/team/team.component.scss")]
         }),
         __metadata("design:paramtypes", [])
     ], TeamComponent);
@@ -564,17 +562,6 @@ var TeamComponent = /** @class */ (function () {
 }());
 
 
-
-/***/ }),
-
-/***/ "./src/app/user-detail/user-detail.component.css":
-/*!*******************************************************!*\
-  !*** ./src/app/user-detail/user-detail.component.css ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
 
 /***/ }),
 
@@ -586,6 +573,17 @@ module.exports = ""
 /***/ (function(module, exports) {
 
 module.exports = "<div *ngIf=\"user\">\r\n  <h2>{{user.FirstName}} {{user.LastName}} Details</h2>\r\n  <!--<div><span>id: </span>{{hero.id}}</div>-->\r\n  <div>\r\n    <label>FirstName:\r\n      <input [(ngModel)]=\"user.FirstName\" placeholder=\"name\"/>\r\n    </label>\r\n    <label>LastName:\r\n      <input [(ngModel)]=\"user.LastName\" placeholder=\"name\"/>\r\n    </label>\r\n  </div>\r\n  <button (click)=\"goBack()\">go back</button>\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/user-detail/user-detail.component.scss":
+/*!********************************************************!*\
+  !*** ./src/app/user-detail/user-detail.component.scss ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
 
 /***/ }),
 
@@ -640,7 +638,7 @@ var UserDetailComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-user-detail',
             template: __webpack_require__(/*! ./user-detail.component.html */ "./src/app/user-detail/user-detail.component.html"),
-            styles: [__webpack_require__(/*! ./user-detail.component.css */ "./src/app/user-detail/user-detail.component.css")]
+            styles: [__webpack_require__(/*! ./user-detail.component.scss */ "./src/app/user-detail/user-detail.component.scss")]
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"],
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["Location"],
