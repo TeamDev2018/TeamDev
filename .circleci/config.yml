@@ -10,7 +10,16 @@ jobs:
       # - image: circleci/node:4.8.2
       - image: circleci/node:10.12.0-browsers
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -34,7 +43,16 @@ jobs:
       # - image: circleci/node:4.8.2
       - image: circleci/node:10.12.0-browsers
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
@@ -55,7 +73,16 @@ jobs:
       # - image: circleci/node:4.8.2
       - image: circleci/node:10.12.0-browsers
     steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
       - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
       - restore_cache:
           keys:
           - v1-dependencies-{{ checksum "package.json" }}
