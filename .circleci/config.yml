@@ -10,6 +10,16 @@ jobs:
       # - image: circleci/node:4.8.2
       - image: circleci/node:10.12.0-browsers
     steps:
-      - run: echo "Hello World"
       - checkout
-      - run: echo "After checkout"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: sudo npm install -g ngh
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
