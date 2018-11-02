@@ -100,12 +100,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: build
-          command: ng build
+          command: ng build --base-href "https://teamdev2018.github.io/TeamDev/"
       - run:
           name: deploy on gh-pages
-          command: ngh --dir dist/TeamDev --token $TOKEN
+          command: npx ngh --dir=dist/TeamDev --token $GH_TOKEN
 workflows:
   version: 2
+  deployment_test:
+    jobs:
+      - deploy
   test_build:
     jobs:
       - test:
