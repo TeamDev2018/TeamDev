@@ -14,7 +14,7 @@ describe('AppComponent', () => {
         MatToolbarModule,
         AppModule
       ],
-      providers: [{provide: APP_BASE_HREF , useValue: '/']
+      providers: [{provide: APP_BASE_HREF , useValue: '/'}]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
