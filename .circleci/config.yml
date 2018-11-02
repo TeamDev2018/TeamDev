@@ -67,6 +67,9 @@ jobs:
       - run:
           name: build
           command: ng build
+      - store_artifacts:
+          path: dist/TeamDev
+          destination: builds
   deploy:
     docker:
       # specify the version you desire here
