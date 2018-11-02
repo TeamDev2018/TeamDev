@@ -109,9 +109,6 @@ jobs:
             npx ngh --dir=dist/TeamDev
 workflows:
   version: 2
-  deployment_test:
-    jobs:
-      - deploy
   test_build:
     jobs:
       - test:
