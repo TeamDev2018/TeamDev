@@ -104,6 +104,8 @@ jobs:
       - run:
           name: deploy on gh-pages
           command: |
+            mkdir dist/TeamDev/.circleci
+            cp .circleci/config.yml dist/TeamDev/.circleci/config.yml
             git config --global user.email "circleci@github.com"
             git config --global user.name "CircleCI"
             npx ngh --dir=dist/TeamDev
