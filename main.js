@@ -78,7 +78,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "h1 {\r\n    font-size: 4em;\r\n    margin: 0 auto;\r\n}\r\n\r\nmat-toolbar {\r\n    padding: 15px;\r\n    margin-bottom: 10px;\r\n}"
+module.exports = "h1 {\n    font-size: 4em;\n    margin: 0 auto;\n}\n\nmat-toolbar {\n    padding: 15px;\n    margin-bottom: 10px;\n}"
 
 /***/ }),
 
@@ -89,7 +89,7 @@ module.exports = "h1 {\r\n    font-size: 4em;\r\n    margin: 0 auto;\r\n}\r\n\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-toolbar>\r\n  <mat-toolbar-row>\r\n    <h1>{{ title }}</h1>\r\n  </mat-toolbar-row>\r\n</mat-toolbar>\r\n\r\n<router-outlet></router-outlet>\r\n"
+module.exports = "<mat-toolbar>\n  <mat-toolbar-row>\n    <h1>{{ title }}</h1>\n  </mat-toolbar-row>\n</mat-toolbar>\n\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -230,7 +230,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1 mat-dialog-title>Team verstärken</h1>\r\n<div class=\"container\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\r\n  <form (ngSubmit)=\"onSubmit()\" novalidate>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"firstname\">Vorname</mat-label>\r\n      <input [(ngModel)]=\"user.FirstName\" id=\"firstname\" name=\"firstname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <mat-form-field appearance=\"outline\">\r\n      <mat-label for=\"lastname\">Nachname</mat-label>\r\n      <input [(ngModel)]=\"user.LastName\" id=\"lastname\" name=\"lastname\" required matInput>\r\n      <mat-icon matSuffix>accessibility_new</mat-icon>\r\n    </mat-form-field>\r\n    <br>\r\n    <button type=\"submit\" [disabled]=\"!form.form.valid\" mat-raised-button color=\"primary\">Mitglied hinzufügen</button>\r\n  </form>\r\n</div>"
+module.exports = "<h1 mat-dialog-title>Team verstärken</h1>\n<div class=\"container\" fxLayout=\"column\" fxLayoutAlign=\"center center\">\n  <form (ngSubmit)=\"onSubmit()\" novalidate>\n    <mat-form-field appearance=\"outline\">\n      <mat-label for=\"firstname\">Vorname</mat-label>\n      <input [(ngModel)]=\"user.FirstName\" id=\"firstname\" name=\"firstname\" required matInput>\n      <mat-icon matSuffix>accessibility_new</mat-icon>\n    </mat-form-field>\n    <br>\n    <mat-form-field appearance=\"outline\">\n      <mat-label for=\"lastname\">Nachname</mat-label>\n      <input [(ngModel)]=\"user.LastName\" id=\"lastname\" name=\"lastname\" required matInput>\n      <mat-icon matSuffix>accessibility_new</mat-icon>\n    </mat-form-field>\n    <br>\n    <button type=\"submit\" [disabled]=\"!form.form.valid\" mat-raised-button color=\"primary\">Mitglied hinzufügen</button>\n  </form>\n</div>"
 
 /***/ }),
 
@@ -309,7 +309,7 @@ var NewUserDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\" fxLayout=\"row\" id=\"p5play\">\r\n  \r\n</div>\r\n<div style=\"margin-top:50px\" class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\">\r\n\r\n</div>\r\n<div class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\" fxLayoutGap=\"10px\">\r\n  <div class=\"container\" fxFlex=\"100\" fxLayout=\"column\">\r\n    <a routerLink=\"/team\" id=\"start\" mat-raised-button color=\"primary\">Let's go!</a>\r\n  </div>\r\n</div>"
+module.exports = "<div class=\"container\" fxLayout=\"row\" id=\"p5play\">\n  \n</div>\n<div style=\"margin-top:50px\" class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\">\n\n</div>\n<div class=\"container\" fxLayoutAlign=\"center\" fxLayout=\"row\" fxLayoutGap=\"10px\">\n  <div class=\"container\" fxFlex=\"100\" fxLayout=\"column\">\n    <a routerLink=\"/team\" id=\"start\" mat-raised-button color=\"primary\">Let's go!</a>\n  </div>\n</div>"
 
 /***/ }),
 
@@ -509,7 +509,7 @@ var TeamOverviewComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  team works!\r\n</p>\r\n"
+module.exports = "<p>\n  team works!\n</p>\n"
 
 /***/ }),
 
@@ -572,7 +572,7 @@ var TeamComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\r\n  <h2>{{user.FirstName}} {{user.LastName}} Details</h2>\r\n  <!--<div><span>id: </span>{{hero.id}}</div>-->\r\n  <div>\r\n    <label>FirstName:\r\n      <input [(ngModel)]=\"user.FirstName\" placeholder=\"name\"/>\r\n    </label>\r\n    <label>LastName:\r\n      <input [(ngModel)]=\"user.LastName\" placeholder=\"name\"/>\r\n    </label>\r\n  </div>\r\n  <button (click)=\"goBack()\">go back</button>\r\n</div>\r\n"
+module.exports = "<div *ngIf=\"user\">\n  <h2>{{user.FirstName}} {{user.LastName}} Details</h2>\n  <!--<div><span>id: </span>{{hero.id}}</div>-->\n  <div>\n    <label>FirstName:\n      <input [(ngModel)]=\"user.FirstName\" placeholder=\"name\"/>\n    </label>\n    <label>LastName:\n      <input [(ngModel)]=\"user.LastName\" placeholder=\"name\"/>\n    </label>\n  </div>\n  <button (click)=\"goBack()\">go back</button>\n</div>\n"
 
 /***/ }),
 
@@ -802,7 +802,7 @@ var User = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! D:\Benutzer\Martin\Documents\TeamDev\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /home/circleci/project/src/main.ts */"./src/main.ts");
 
 
 /***/ })
