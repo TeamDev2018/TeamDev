@@ -14,7 +14,7 @@ describe('TeamOverviewComponent', () => {
       imports: [
         AppModule
       ],
-      providers: [{provide: APP_BASE_HREF , useValue: '/']
+      providers: [{provide: APP_BASE_HREF , useValue: '/'}]
     })
     .compileComponents();
   }));
