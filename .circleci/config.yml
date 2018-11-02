@@ -25,7 +25,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Test
-          command: ng test
+          command: ng test --watch=false
       - run:
           name: E2E
           command: ng e2e
