@@ -15,7 +15,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AvatarModule } from 'ngx-avatar';
 import { NewUserDialogComponent } from './new-user-dialog/new-user-dialog.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
+import { MatInputModule } from '@angular/material';
+import { MatCardModule } from '@angular/material/card';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -42,6 +43,7 @@ import { APP_BASE_HREF } from '@angular/common';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
+    MatCardModule,
     AvatarModule,
     AppRoutingModule
   ],

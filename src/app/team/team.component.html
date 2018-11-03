@@ -7,16 +7,17 @@
     </div>
   </div>
 </div>
-<div *ngFor="let user of users" fxLayout="row">
+<div *ngFor="let user of users, let i = index" fxLayout="row">
   <div fxLayout="column" fxFlex="100%">
-    <div fxLayoutAlign="center start">
-      <mat-card style="min-width: 50%">
-        <mat-card-header>
+    <div fxFlexOffset="3em" fxLayoutAlign="center start">
+          <mat-card style="min-width: 50%">
+        <!-- <mat-card-header>
           <mat-card-title>{{user.FirstName}}</mat-card-title>
           <mat-card-subtitle>{{user.LastName}}</mat-card-subtitle>
-        </mat-card-header>
+        </mat-card-header> -->
         <mat-card-content>
-          <img mat-card-image style="min-width:30em; min-height: 30em;" src="{{user.AvatarLink}}" alt="Photo of a Shiba Inu">
+          <div class="bg-image" [ngClass]="{'office1': getImageBackgroundClassIndex(i), 'office2': !getImageBackgroundClassIndex(i)}"></div>
+          <img mat-card-image style="min-width:30em; min-height: 30em;z-index: 5;" src="{{user.AvatarLinkFashion}}" alt="invalid pic">
         </mat-card-content>
       </mat-card>
     </div>
