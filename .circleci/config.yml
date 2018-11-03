@@ -73,7 +73,8 @@ jobs:
       - run:
           name: Notify discord
           command: |
-            curl -H "Content-Type: application/json" -X POST -d "{	\"embeds\": [{		\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+            GIT_COMMIT=`git log --format=%B -n 1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
   deploy:
     docker:
       # specify the version you desire here
@@ -113,6 +114,12 @@ jobs:
             git config --global user.email "circleci@github.com"
             git config --global user.name "CircleCI"
             npx ngh --dir=dist/TeamDev
+      - run:
+          name: Notify discord
+          command: |
+            GIT_COMMIT=`git log --format=%B -n 1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+
 workflows:
   version: 2
   test_build:
