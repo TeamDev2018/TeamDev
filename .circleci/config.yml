@@ -33,7 +33,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Test
-          command: ng test --watch=false
+          command: ng test --watch=false --progress=false
       - run:
           name: E2E
           command: ng e2e
@@ -66,15 +66,15 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: build
-          command: ng build --base-href "/0/builds/"
+          command: ng build --no-progress --base-href "/0/builds/"
       - store_artifacts:
           path: dist/TeamDev
           destination: builds
       - run:
           name: Notify discord
           command: |
-            GIT_COMMIT=`git log --format=%B -n 1`
-            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+            GIT_COMMIT=`git log --format="%s ([%h](https://github.com/TeamDev2018/TeamDev/commit/%H) by %an)" -n 1 $CIRCLE_SHA1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
   deploy:
     docker:
       # specify the version you desire here
@@ -105,7 +105,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: build
-          command: ng build --prod --base-href "https://teamdev2018.github.io/TeamDev/"
+          command: ng build --no-progress --prod --base-href "https://teamdev2018.github.io/TeamDev/"
       - run:
           name: deploy on gh-pages
           command: |
@@ -117,8 +117,8 @@ jobs:
       - run:
           name: Notify discord
           command: |
-            GIT_COMMIT=`git log --format=%B -n 1`
-            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+            GIT_COMMIT=`git log --format="%s ([%h](https://github.com/TeamDev2018/TeamDev/commit/%H) by %an)" -n 1 $CIRCLE_SHA1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
 
 workflows:
   version: 2
