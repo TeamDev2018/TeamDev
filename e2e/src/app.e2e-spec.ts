@@ -6,9 +6,9 @@ describe('workspace-project App', () => {
   beforeEach(() => {
     page = new AppPage();
   });
-
-  it('should display welcome message', () => {
+/*
+  it('should display the title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to TeamDev!');
-  });
+    expect(page.getTitle()).toEqual('TeamDev');
+  });*/
 });

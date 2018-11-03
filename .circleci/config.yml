@@ -1,0 +1,145 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  test:
+    docker:
+      # specify the version you desire here
+      # - image: circleci/node:4.8.2
+      - image: circleci/node:10.12.0-browsers
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Test
+          command: ng test --watch=false
+      - run:
+          name: E2E
+          command: ng e2e
+  build:
+    docker:
+      # specify the version you desire here
+      # - image: circleci/node:4.8.2
+      - image: circleci/node:10.12.0-browsers
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: build
+          command: ng build --base-href "/0/builds/"
+      - store_artifacts:
+          path: dist/TeamDev
+          destination: builds
+      - run:
+          name: Notify discord
+          command: |
+            GIT_COMMIT=`git log --format=%B -n 1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+  deploy:
+    docker:
+      # specify the version you desire here
+      # - image: circleci/node:4.8.2
+      - image: circleci/node:10.12.0-browsers
+    steps:
+      - restore_cache:
+          keys:
+            - source-v1-{{ .Branch }}-{{ .Revision }}
+            - source-v1-{{ .Branch }}-
+            - source-v1-
+      - checkout
+      - save_cache:
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
+          paths:
+            - ".git"
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
+      - run: sudo npm install -g ngh
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: build
+          command: ng build --prod --base-href "https://teamdev2018.github.io/TeamDev/"
+      - run:
+          name: deploy on gh-pages
+          command: |
+            mkdir dist/TeamDev/.circleci
+            cp .circleci/config.yml dist/TeamDev/.circleci/config.yml
+            git config --global user.email "circleci@github.com"
+            git config --global user.name "CircleCI"
+            npx ngh --dir=dist/TeamDev
+      - run:
+          name: Notify discord
+          command: |
+            GIT_COMMIT=`git log --format=%B -n 1`
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
+
+workflows:
+  version: 2
+  test_build:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+  deploy:
+    triggers:
+      - schedule: 
+          cron: "0 6 * * *"
+          filters:
+            branches:
+              only: master
+    jobs:
+      - deploy

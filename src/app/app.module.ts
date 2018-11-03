@@ -20,7 +20,7 @@ import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import {MatCardModule} from '@angular/material/card';
+import { APP_BASE_HREF } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,14 +42,12 @@ import {MatCardModule} from '@angular/material/card';
     MatIconModule,
     MatInputModule,
     MatDialogModule,
-    MatCardModule,
     AvatarModule,
     AppRoutingModule
   ],
   entryComponents: [
     NewUserDialogComponent
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
