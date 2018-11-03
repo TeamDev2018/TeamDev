@@ -1,3 +1,4 @@
+import { Attribute } from './attribute';
 
 import * as libmoji from 'libmoji';
 export class User {
@@ -5,7 +6,7 @@ export class User {
     public AvatarLinkHead: string;
     public AvatarLinkFashion: string;
 
-    constructor(public FirstName: string, public LastName: string) {
+    constructor(public FirstName: string, public LastName: string, public Attributes: Array<Attribute> = new Array<Attribute>()) {
 
         const gender = libmoji.genders[libmoji.randInt(2)];
         const style = libmoji.styles[libmoji.randInt(3)];

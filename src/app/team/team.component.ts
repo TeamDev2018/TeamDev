@@ -22,7 +22,8 @@ export class TeamComponent implements OnInit {
   }
 
   getImageBackgroundClassIndex(userIndex: number) {
-    return (userIndex % 2) === 0 ? true : false;
+    // return (userIndex % 2) === 0 ? true : false;
+    return false;
   }
 
 }
