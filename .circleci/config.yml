@@ -70,6 +70,10 @@ jobs:
       - store_artifacts:
           path: dist/TeamDev
           destination: builds
+      - run:
+          name: Notify discord
+          command: |
+            curl -H "Content-Type: application/json" -X POST -d "{	\"embeds\": [{		\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME]($CIRCLE_REPOSITORY_URL) ($CIRCLE_BRANCH)\n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" https://discordapp.com/api/webhooks/507642569421881374/8yqA7I6u46O79O1TZmUmTL5w1Ca52-HyEsmtx9igCSrKAfaEHCxZjF7EVdkAjLoGQiBX
   deploy:
     docker:
       # specify the version you desire here
