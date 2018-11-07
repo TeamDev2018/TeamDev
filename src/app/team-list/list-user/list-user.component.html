@@ -1,4 +1,4 @@
-<mat-card [@scrollAnimation]="state" fxFlex="50%" fxFlex.sm="80%" fxFlex.md="80%" fxFlex.xs="90%">
+<mat-card [@scrollAnimation]="state" *ngIf="user" fxFlex="50%" fxFlex.sm="80%" fxFlex.md="80%" fxFlex.xs="90%">
   <mat-card-content>
     <div class="bg-image" [ngClass]="{'office2': true}"></div>
     <div class="card-content" fxLayout="row" fxLayout.xs="column">
