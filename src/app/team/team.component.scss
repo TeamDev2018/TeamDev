@@ -1,5 +1,5 @@
 .container.background {
-    background-image: url('../../assets/img/background.png');
+    background-image: url('/assets/img/background.png');
     height:auto;
     overflow: hidden;
 }
@@ -30,11 +30,11 @@ mat-card-content {
     }
 
     div.bg-image.office1 {
-        background-image: url('../../assets/img/office-1.jpg')
+        background-image: url('/assets/img/office-1.jpg')
     }
 
     div.bg-image.office2 {
-        background-image: url('../../assets/img/office-2.jpg');
+        background-image: url('/assets/img/office-2.jpg');
     }
     
     .card-content {
