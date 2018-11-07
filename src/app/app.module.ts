@@ -21,7 +21,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatBadgeModule } from '@angular/material/badge';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
-import { TeamComponent } from './team/team.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { APP_BASE_HREF } from '@angular/common';
@@ -31,7 +30,6 @@ import { APP_BASE_HREF } from '@angular/common';
     AppComponent,
     NewUserDialogComponent,
     TeamOverviewComponent,
-    TeamComponent,
     UserDetailComponent,
   ],
   imports: [
