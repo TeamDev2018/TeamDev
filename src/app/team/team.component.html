@@ -7,12 +7,12 @@
     </div>
   </div>
 </div>
-<div *ngFor="let user of users, let i = index" fxLayout="row">
-  <div fxLayout="column" fxFlex="100%">
-    <div fxFlexOffset="3em" fxLayoutAlign="center start">
-      <mat-card style="min-width: 50%; max-width: 50%">
+<div fxLayout="row">
+  <div fxLayout="column">
+    <div *ngFor="let user of users, let i = index" fxFlexOffset="3em" fxLayoutAlign="center start">
+      <mat-card fxFlex="50%" fxFlex.sm="80%" fxFlex.md="80%" fxFlex.xs="100%">
         <mat-card-content>
-          <div class="bg-image" [ngClass]="{'office1': getImageBackgroundClassIndex(i), 'office2': !getImageBackgroundClassIndex(i)}"></div>
+          <div class="bg-image" [ngClass]="{'office2': true}"></div>
           <div class="card-content" fxLayout="row" fxLayout.xs="column">
             <div fxFlex="30">
               <img mat-card-image style="min-width:18em; min-height: 30em; max-width:100%;" src="{{user.AvatarLinkFashion}}" alt="invalid pic">
