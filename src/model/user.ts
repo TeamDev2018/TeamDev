@@ -5,6 +5,7 @@ export class User {
     public AvatarLink: string;
     public AvatarLinkHead: string;
     public AvatarLinkFashion: string;
+    public KeyAttributes: Array<Attribute>;
 
     constructor(public FirstName: string, public LastName: string, public Attributes: Array<Attribute> = new Array<Attribute>()) {
 
@@ -16,5 +17,9 @@ export class User {
         this.AvatarLink = libmoji.buildPreviewUrl('body', 3, gender[1], style[1], 0, traits, outfit);
         this.AvatarLinkHead = libmoji.buildPreviewUrl('head', 3, gender[1], style[1], 0, traits, outfit);
         this.AvatarLinkFashion = libmoji.buildPreviewUrl('fashion', 3, gender[1], style[1], 0, traits, outfit);
+
+        if (this.Attributes.length) {
+            this.KeyAttributes = this.Attributes.splice(0, 3);
+        }
     }
 }

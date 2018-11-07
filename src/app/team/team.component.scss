@@ -43,6 +43,16 @@ mat-card-content {
     }
 }
 
+div.key-attribute {
+    button {
+        font-size: 3em;
+    }
+}
+
+mat-chip {
+    overflow: visible;
+}
+
 img.card-header {
     max-height: 5em;
 }
