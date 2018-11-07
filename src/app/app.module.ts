@@ -1,3 +1,4 @@
+import { TeamListModule } from './team-list/team-list.module';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -49,6 +50,7 @@ import { APP_BASE_HREF } from '@angular/common';
     MatChipsModule,
     MatBadgeModule,
     AvatarModule,
+    TeamListModule,
     AppRoutingModule
   ],
   entryComponents: [
