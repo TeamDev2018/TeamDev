@@ -28,4 +28,7 @@ describe('TeamListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should get Users', () => {
+    expect(component.users.length).toBeGreaterThan(0);
+  });
 });

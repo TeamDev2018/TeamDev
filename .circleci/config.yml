@@ -33,7 +33,16 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Test
-          command: ng test --watch=false --progress=false
+          environment:
+            JUNIT_REPORT_PATH: ./junit/
+            JUNIT_REPORT_NAME: test-results.xml
+          command: ng test --watch=false --progress=false --code-coverage
+      - store_test_results:
+          path: ~/junit
+      - store_artifacts:
+          path: ./junit
+      - store_artifacts:
+          path: ./coverage
       - run:
           name: E2E
           command: ng e2e

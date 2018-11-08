@@ -8,9 +8,9 @@ import { AppModule } from '../app.module';
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('NewUserDialogComponent', () => {
+  /*
   let component: NewUserDialogComponent;
   let fixture: ComponentFixture<NewUserDialogComponent>;
-  /*
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ],

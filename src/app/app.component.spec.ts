@@ -5,6 +5,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { AppRoutingModule } from './app-routing.module';
 import { AppModule } from './app.module';
 import { APP_BASE_HREF } from '@angular/common';
+import { By } from '@angular/platform-browser';
+import { RouterOutlet } from '@angular/router';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,6 +29,11 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('TeamDev');
   }));
+  it('should contain the routing-outlet', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const outlet = fixture.debugElement.query(By.directive(RouterOutlet));
+    expect(outlet).toBeTruthy();
+  });
   // it('should render title in a title tag', async(() => {
   //   const fixture = TestBed.createComponent(AppComponent);
   //   fixture.detectChanges();
