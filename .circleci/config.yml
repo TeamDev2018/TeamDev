@@ -35,12 +35,11 @@ jobs:
           name: Test
           command: |
             mkdir ./junit
-            echo "Path: $JUNIT_REPORT_PATH"
-            echo "Name: $JUNIT_REPORT_NAME"
+            mkdir ./junit/karma
             ng test --watch=false --progress=false --code-coverage
           environment:
-            JUNIT_REPORT_PATH: "./junit/karma/"
-            JUNIT_REPORT_NAME: "test-results.xml"
+            JUNIT_REPORT_PATH: ./junit/karma/
+            JUNIT_REPORT_NAME: test-results.xml
       - store_test_results:
           path: ./junit
       - store_artifacts:
