@@ -8,6 +8,9 @@ import { MatButtonModule } from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatBadgeModule } from '@angular/material/badge';
 
+/**
+ * Sub-Module for the {@link TeamListComponent} page
+ */
 @NgModule({
   imports: [
     CommonModule,

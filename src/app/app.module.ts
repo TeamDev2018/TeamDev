@@ -25,6 +25,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { APP_BASE_HREF } from '@angular/common';
 
+/**
+ * The base module for the whole app
+ */
 @NgModule({
   declarations: [
     AppComponent,
