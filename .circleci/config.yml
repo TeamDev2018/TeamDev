@@ -34,13 +34,13 @@ jobs:
       - run:
           name: Test
           environment:
-            JUNIT_REPORT_PATH: ./junit/
+            JUNIT_REPORT_PATH: ~/junit/
             JUNIT_REPORT_NAME: test-results.xml
           command: ng test --watch=false --progress=false --code-coverage
       - store_test_results:
           path: ~/junit
       - store_artifacts:
-          path: ./junit
+          path: ~/junit
       - store_artifacts:
           path: ./coverage
       - run:
