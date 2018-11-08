@@ -77,7 +77,7 @@ jobs:
           name: Notify discord
           command: |
             GIT_COMMIT=`git log --format="%s ([%h](https://github.com/TeamDev2018/TeamDev/commit/%H) by %an)" -n 1 $CIRCLE_SHA1`
-            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME](https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME](https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/index.html)\n[Documentation](https://${CIRCLE_BUILD_NUM}-147940976-gh.circle-artifacts.com/0/builds/Documentation/index.html) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
   deploy:
     docker:
       # specify the version you desire here
@@ -124,7 +124,7 @@ jobs:
           name: Notify discord
           command: |
             GIT_COMMIT=`git log --format="%s ([%h](https://github.com/TeamDev2018/TeamDev/commit/%H) by %an)" -n 1 $CIRCLE_SHA1`
-            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME](https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
+            curl -H "Content-Type: application/json" -X POST -d "{\"embeds\": [{\"description\": \"Success: ${CIRCLE_USERNAME}'s $CIRCLE_JOB ([#${CIRCLE_BUILD_NUM}]($CIRCLE_BUILD_URL); push) in [$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME](https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}) ($CIRCLE_BRANCH)\n - $GIT_COMMIT \n[Open](https://teamdev2018.github.io/TeamDev/)\n[Documentation](https://teamdev2018.github.io/TeamDev/Documentation/index.html) \",\"color\": 65280	}]}" $DISCORD_WEBHOOK
 
 workflows:
   version: 2
