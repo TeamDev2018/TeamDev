@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ngh": "ng build --prod && npx ngh --dir dist/TeamDev",
-    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d dist/TeamDev/Documentation",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d dist/TeamDev/Documentation --hideGenerator -n \"TeamDev Documentation\"",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
