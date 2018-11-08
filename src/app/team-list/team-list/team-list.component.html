@@ -1,15 +1,19 @@
-<div class="container background" fxLayout="row">
-  <div fxLayout="column" fxFlex="100%">
-    <div fxLayoutAlign="center" *ngIf="users">
-      <div class="avatar" *ngFor="let user of users">
-        <img src="{{user.AvatarLinkHead}}" alt="invalid pic">
+<div style="height:100%;" fxLayout="column">
+  <div class="container background">
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="100%">
+        <div fxLayoutAlign="center" *ngIf="users">
+          <div class="avatar" *ngFor="let user of users">
+            <img src="{{user.AvatarLinkHead}}" alt="invalid pic">
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div fxLayout="row">
-  <div fxLayout="column" fxFlex="100%">
-    <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user"></app-list-user>
+  <div fxLayout="row" fxLayoutAlign="center start">
+    <div fxLayout="column" fxFlex="auto">
+      <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user"></app-list-user>
+      <div style="margin-top: 300px;">&nbsp;</div>
+    </div>
   </div>
 </div>
-<div style="margin-top:500px">&nbsp;</div>

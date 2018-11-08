@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team-list.component.scss']
 })
 export class TeamListComponent implements OnInit {
-    private users: Array<User>;
+    public users: Array<User>;
 
     constructor(private userService: UserService) { }
 
