@@ -15,6 +15,9 @@ export class UserService {
    */
   private _Users: User[];
 
+  /**
+   * @ignore
+   */
   constructor() {
     this._Users = USERS;
   }

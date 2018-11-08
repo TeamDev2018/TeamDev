@@ -1,5 +1,8 @@
 import { Attribute } from '../model/attribute';
 import { User } from '../model/user';
+/**
+ * Data for the {@link UserService} to provide some mock {@link User}s
+ */
 export const USERS = new Array<User>(
     new User('Lukas', 'Anetsberger', new Array<Attribute>(
         new Attribute('gutDrauf', false),
