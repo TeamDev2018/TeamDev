@@ -33,10 +33,13 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
       - run:
           name: Test
+          command: |
+            echo "Path: $JUNIT_REPORT_PATH"
+            echo "Name: $JUNIT_REPORT_NAME"
+            ng test --watch=false --progress=false --code-coverage
           environment:
-            JUNIT_REPORT_PATH: ./junit/
-            JUNIT_REPORT_NAME: test-results.xml
-          command: ng test --watch=false --progress=false --code-coverage
+            JUNIT_REPORT_PATH: "./junit/"
+            JUNIT_REPORT_NAME: "test-results.xml"
       - store_test_results:
           path: ./junit/test-results.xml
       - store_artifacts:
