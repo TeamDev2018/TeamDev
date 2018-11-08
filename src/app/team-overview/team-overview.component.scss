@@ -2,6 +2,21 @@
     margin-top: 5px;
 }
 
+.container.background {
+    background-image: url('/assets/img/background.png');
+    height:70%;
+    overflow: hidden;
+}
+
+div.avatar {
+
+    margin-top: -15em;
+
+    img {
+        max-width: 20em;
+    }
+}
+
 a#start {
     padding: 15px;
     font-size: 3em;
