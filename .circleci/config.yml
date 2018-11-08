@@ -34,6 +34,7 @@ jobs:
       - run:
           name: Test
           command: |
+            mkdir ./junit
             echo "Path: $JUNIT_REPORT_PATH"
             echo "Name: $JUNIT_REPORT_NAME"
             ng test --watch=false --progress=false --code-coverage
