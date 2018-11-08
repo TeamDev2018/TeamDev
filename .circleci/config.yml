@@ -39,10 +39,10 @@ jobs:
             echo "Name: $JUNIT_REPORT_NAME"
             ng test --watch=false --progress=false --code-coverage
           environment:
-            JUNIT_REPORT_PATH: "./junit/"
+            JUNIT_REPORT_PATH: "./junit/karma/"
             JUNIT_REPORT_NAME: "test-results.xml"
       - store_test_results:
-          path: ./junit/test-results.xml
+          path: ./junit
       - store_artifacts:
           path: ./junit
       - store_artifacts:
