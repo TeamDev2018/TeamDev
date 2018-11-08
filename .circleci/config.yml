@@ -67,6 +67,9 @@ jobs:
       - run:
           name: build
           command: ng build --no-progress --base-href "/0/builds/"
+      - run:
+          name: generate Documentation
+          command: ng run compodoc
       - store_artifacts:
           path: dist/TeamDev
           destination: builds
@@ -106,6 +109,9 @@ jobs:
       - run:
           name: build
           command: ng build --no-progress --prod --base-href "https://teamdev2018.github.io/TeamDev/"
+      - run:
+          name: generate Documentation
+          command: ng run compodoc
       - run:
           name: deploy on gh-pages
           command: |
