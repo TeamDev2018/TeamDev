@@ -1,0 +1,660 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>TeamDev Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">TeamDev Documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ListUserComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/team-list/list-user/list-user.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-list-user</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./list-user.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./list-user.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#el">el</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#state">state</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#user">user</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll">window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(el: <a href="https://angular.io/api/core/ElementRef" target="_blank">ElementRef</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>el</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
+                        <a name="user"></a>
+                        <code>user</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="../classes/User.html" target="_self" >User</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:25</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="window:scroll"></a>
+                        <span class="name">
+                            <b>
+                            window:scroll
+                            </b>
+                            <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Arguments : </i><code>'$event' </code>
+                        </td>
+                    </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>window:scroll()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:29</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="el"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            el
+                            </b>
+                            <a href="#el"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>el:     <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="state"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            state
+                            </b>
+                            <a href="#state"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>state:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String" target="_blank" >String</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>&#x27;inactive&#x27;</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { animate, state, style, transition, trigger } from &#x27;@angular/animations&#x27;;
+import { User } from &#x27;../../../model/user&#x27;;
+import { Component, ElementRef, HostListener, Input, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-list-user&#x27;,
+  templateUrl: &#x27;./list-user.component.html&#x27;,
+  styleUrls: [&#x27;./list-user.component.scss&#x27;],
+  animations: [
+    trigger(&#x27;scrollAnimation&#x27;, [
+      state(&#x27;active&#x27;, style({
+        opacity: 1
+      })),
+      state(&#x27;inactive&#x27;, style({
+        opacity: 0.5
+      })),
+      transition(&#x27;active &#x3D;&gt; inactive&#x27;, animate(&#x27;200ms&#x27;)),
+      transition(&#x27;inactive &#x3D;&gt; active&#x27;, animate(&#x27;200ms&#x27;)),
+    ])
+  ]
+})
+export class ListUserComponent implements OnInit {
+  private state: String &#x3D; &#x27;inactive&#x27;;
+
+  @Input() user: User;
+
+  constructor(public el: ElementRef) { }
+
+  ngOnInit() {
+  }
+
+  @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])
+  checkScroll() {
+    const componentPosition &#x3D; this.el.nativeElement.offsetTop;
+    const scrollPosition &#x3D; window.pageYOffset + 350;
+    const viewPosition &#x3D; scrollPosition - (componentPosition + this.el.nativeElement.offsetHeight);
+
+    if (scrollPosition &gt;&#x3D; componentPosition &amp;&amp; viewPosition &lt;&#x3D; this.el.nativeElement.offsetHeight / 3) {
+      console.log(&#x27;cp &#x27;, componentPosition);
+      console.log(&#x27;sp &#x27;, scrollPosition);
+      this.state &#x3D; &#x27;active&#x27;;
+    } else {
+      this.state &#x3D; &#x27;inactive&#x27;;
+    }
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;mat-card [@scrollAnimation]&#x3D;&quot;state&quot; *ngIf&#x3D;&quot;user&quot; fxFlex&#x3D;&quot;50%&quot; fxFlex.sm&#x3D;&quot;80%&quot; fxFlex.md&#x3D;&quot;80%&quot; fxFlex.xs&#x3D;&quot;90%&quot;&gt;
+  &lt;mat-card-content&gt;
+    &lt;div class&#x3D;&quot;bg-image&quot; [ngClass]&#x3D;&quot;{&#x27;office2&#x27;: true}&quot;&gt;&lt;/div&gt;
+    &lt;div class&#x3D;&quot;card-content&quot; fxLayout&#x3D;&quot;row&quot; fxLayout.xs&#x3D;&quot;column&quot;&gt;
+      &lt;div fxFlex&#x3D;&quot;30&quot;&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;bg-image&quot; [ngClass]&#x3D;&quot;{&#x27;office2&#x27;: true}&quot;&gt;&lt;/div&gt; --&gt;
+        &lt;img style&#x3D;&quot;min-width:18em; min-height: 30em; max-width:100%;&quot; src&#x3D;&quot;{{user.AvatarLinkFashion}}&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
+      &lt;/div&gt;
+      &lt;div fxFlexOffset&#x3D;&quot;10em&quot; *ngIf&#x3D;&quot;user.Attributes.length&quot; fxFlexOffset.xs&#x3D;&quot;0em&quot; fxLayoutAlign&#x3D;&quot;center center&quot; fxFlex&#x3D;&quot;70&quot;&gt;
+        &lt;mat-card&gt;
+          &lt;mat-card-content&gt;
+            &lt;div fxLayoutGap&#x3D;&quot;10px&quot; fxLayout&#x3D;&quot;column&quot; fxLayoutAlign&#x3D;&quot;center&quot;&gt;
+              &lt;div class&#x3D;&quot;key-attribute&quot; *ngFor&#x3D;&quot;let keyAttribute of user.KeyAttributes&quot; fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center&quot;&gt;
+                &lt;button mat-button&gt;#{{ keyAttribute.text }}&lt;/button&gt;
+              &lt;/div&gt;
+              &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center stretch&quot;&gt;
+                &lt;mat-chip-list&gt;
+                  &lt;mat-chip matBadge&#x3D;&quot;+&quot; matBadgePosition&#x3D;&quot;above after&quot; *ngFor&#x3D;&quot;let attribute of user.Attributes&quot;&gt;#{{attribute.text}}&lt;/mat-chip&gt;
+                &lt;/mat-chip-list&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+          &lt;/mat-card-content&gt;
+        &lt;/mat-card&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/mat-card-content&gt;
+&lt;/mat-card&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./list-user.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">mat-card-content {
+    div.bg-image {
+        // background-image: url(&#x27;../../assets/img/office-1.jpg&#x27;);
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    div.bg-image.office1 {
+        background-image: url(&#x27;/assets/img/office-1.jpg&#x27;)
+    }
+
+    div.bg-image.office2 {
+        background-image: url(&#x27;/assets/img/office-2.jpg&#x27;);
+    }
+    
+    .card-content {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+div.key-attribute {
+    button {
+        font-size: 3em;
+    }
+}
+
+mat-chip {
+    overflow: visible;
+    border-radius: 0px;
+}
+
+img.card-header {
+    max-height: 5em;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><mat-card [@scrollAnimation]="state" *ngIf="user" fxFlex="50%" fxFlex.sm="80%" fxFlex.md="80%" fxFlex.xs="90%">  <mat-card-content>    <div class="bg-image" [ngClass]="{\'office2\': true}"></div>    <div class="card-content" fxLayout="row" fxLayout.xs="column">      <div fxFlex="30">        <!-- <div class="bg-image" [ngClass]="{\'office2\': true}"></div> -->        <img style="min-width:18em; min-height: 30em; max-width:100%;" src="{{user.AvatarLinkFashion}}" alt="invalid pic">      </div>      <div fxFlexOffset="10em" *ngIf="user.Attributes.length" fxFlexOffset.xs="0em" fxLayoutAlign="center center" fxFlex="70">        <mat-card>          <mat-card-content>            <div fxLayoutGap="10px" fxLayout="column" fxLayoutAlign="center">              <div class="key-attribute" *ngFor="let keyAttribute of user.KeyAttributes" fxLayout="row" fxLayoutAlign="center">                <button mat-button>#{{ keyAttribute.text }}</button>              </div>              <div fxLayout="row" fxLayoutAlign="center stretch">                <mat-chip-list>                  <mat-chip matBadge="+" matBadgePosition="above after" *ngFor="let attribute of user.Attributes">#{{attribute.text}}</mat-chip>                </mat-chip-list>              </div>            </div>          </mat-card-content>        </mat-card>      </div>    </div>  </mat-card-content></mat-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'NewUserDialogComponent', 'selector': ''},{'name': 'TeamListComponent', 'selector': 'app-team-list'},{'name': 'TeamOverviewComponent', 'selector': 'app-team-overview'},{'name': 'UserDetailComponent', 'selector': 'app-user-detail'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ListUserComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListUserComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
