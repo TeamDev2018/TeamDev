@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ListUserComponent } from './list-user/list-user.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -18,7 +19,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatChipsModule,
     MatCardModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    BrowserAnimationsModule
   ],
   declarations: [TeamListComponent, ListUserComponent]
 })

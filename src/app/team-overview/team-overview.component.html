@@ -1,7 +1,26 @@
-<div class="container background" fxLayout="row">
-  <div fxLayout="column" fxFlex="100%">
-    <!-- <div fxLayout="row"> -->
-    <div fxLayoutAlign="center start" fxFlex="100%">
+<div style="height:100%" fxLayout="column">
+  <div class="container background" fxFlex="70">
+    <div fxLayout="column" fxFlex="100">
+      <div fxLayoutAlign="center start" fxLayout="row">
+        <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">
+      </div>
+      <div fxLayoutAlign="center end" fxFlexOffset.xs="0em" fxLayoutAlign.xs="center center" fxLayout="row" fxFlex="100">
+        <div fxLayout="column"></div>
+        <div class="avatar" *ngFor="let user of users">
+          <img src="{{user.AvatarLink}}" alt="invalid pic">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" fxLayout="column">
+    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>
+  </div>
+</div>
+
+<!-- <div class="container background" fxLayout="row">
+  <div fxLayout="column" fxFlex="100%"> -->
+<!-- <div fxLayout="row"> -->
+<!-- <div fxLayoutAlign="center start" fxFlex="100%">
       <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">
     </div>
     <div fxLayoutAlign="center" *ngIf="users">
@@ -18,4 +37,4 @@
   <div class="container" fxLayout="column">
     <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>
   </div>
-</div>
+</div> -->

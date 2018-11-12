@@ -21,28 +21,27 @@ import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/cor
 })
 export class ListUserComponent implements OnInit {
   private state: String = 'inactive';
-
+  @Input() intersector: ElementRef;
   @Input() user: User;
 
   constructor(public el: ElementRef) { }
 
   ngOnInit() {
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  checkScroll() {
-    const componentPosition = this.el.nativeElement.offsetTop;
-    const scrollPosition = window.pageYOffset + 350;
-    const viewPosition = scrollPosition - (componentPosition + this.el.nativeElement.offsetHeight);
-
-    if (scrollPosition >= componentPosition && viewPosition <= this.el.nativeElement.offsetHeight / 3) {
-      console.log('cp ', componentPosition);
-      console.log('sp ', scrollPosition);
-      this.state = 'active';
-    } else {
-      this.state = 'inactive';
+    if (this.intersector) {
+      const observer = new IntersectionObserver( (entries: IntersectionObserverEntry[]) => {
+        const entry = entries[0];
+        if (entry.intersectionRatio > 0.99) {
+          this.state = 'active';
+        } else {
+          this.state = 'inactive';
+        }
+      }, {
+        root: this.intersector.nativeElement,
+        rootMargin: '1px',
+        threshold: 1.0
+      });
+      observer.observe(this.el.nativeElement);
     }
-
   }
 
 }
