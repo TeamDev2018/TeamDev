@@ -1,7 +1,7 @@
 <div style="height:100%;" fxLayout="column">
   <div class="container background">
-    <div fxLayout="row">
-      <div fxLayout="column" fxFlex="100%">
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div fxLayout="column" fxFlex="40" fxFlex.xs="100" fxFlex.sm="100">
         <div fxLayoutAlign="center" *ngIf="users">
           <div class="avatar" *ngFor="let user of users">
             <img src="{{user.AvatarLinkHead}}" alt="invalid pic">
