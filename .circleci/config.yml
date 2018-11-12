@@ -34,16 +34,14 @@ jobs:
       - run:
           name: Test
           command: |
-            mkdir ./junit
-            mkdir ./junit/karma
             ng test --watch=false --progress=false --code-coverage
           environment:
-            JUNIT_REPORT_PATH: ./junit/karma/
+            JUNIT_REPORT_PATH: ~/junit/karma/
             JUNIT_REPORT_NAME: test-results.xml
       - store_test_results:
-          path: ./junit
+          path: ~/junit
       - store_artifacts:
-          path: ./junit
+          path: ~/junit
       - store_artifacts:
           path: ./coverage
       - run:
