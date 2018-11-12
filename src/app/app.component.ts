@@ -7,7 +7,7 @@ import { OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 const fadeIn = [
-  query(':leave, :enter', style({ position: 'fixed', height: '100%' }), { optional: true }),
+  query(':leave, :enter', style({ position: 'fixed', height: '100%', width: '100%' }), { optional: true }),
   query(':enter', style({ visibility: 'hidden' })),
   sequence([
     query(':leave', [
