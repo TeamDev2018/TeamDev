@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -36,7 +35,6 @@ import { APP_BASE_HREF } from '@angular/common';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     FormsModule,
     FlexLayoutModule,
     MatGridListModule,
