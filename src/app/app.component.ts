@@ -11,13 +11,13 @@ const fadeIn = [
   query(':enter', style({ visibility: 'hidden' })),
   sequence([
     query(':leave', [
-      style({ height: '100%' }),
+      style({ overflow: 'hidden', height: '100%' }),
       animate('0.5s ease-in-out', style({ height: '0%' })),
     ], { optional: true }),
-    query(':enter', [
-      style({ visibility: 'visible' }),
-      animate('0.5s ease-in-out', style({ height: '100%' }))
-    ], { optional: true })
+    // query(':enter', [
+    //   style({ visibility: 'visible' }),
+    //   animate('0.5s ease-in-out', style({ height: '100%' }))
+    // ], { optional: true })
   ])
 ];
 
