@@ -1,10 +1,10 @@
 <div style="height:100%" fxLayout="column">
-  <div class="container background" fxFlex="70">
+  <div class="container background" fxFlex="70" fxFlex.xs="50">
     <div fxLayout="column" fxFlex="100">
       <div fxLayoutAlign="center start" fxLayout="row">
-        <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">
+        <img src="./assets/img/TeamDev-logo.png" id="logo" alt="invalid pic">
       </div>
-      <div fxLayoutAlign="center end" fxFlexOffset.xs="0em" fxLayoutAlign.xs="center center" fxLayout="row" fxFlex="100">
+      <div fxLayoutAlign="center end" fxFlexOffset.xs="0em" fxLayoutAlign.xs="center end" fxLayout="row" fxFlex="100">
         <div fxLayout="column"></div>
         <div class="avatar" *ngFor="let user of users">
           <img src="{{user.AvatarLink}}" alt="invalid pic">
@@ -12,29 +12,8 @@
       </div>
     </div>
   </div>
-  <div class="container" fxLayout="column">
-    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>
+  <div class="container" fxFlex="30" fxFlexOffset="1em" fxLayoutAlign="center start" fxLayout="row">
+    <div fxLayout="column"></div>
+    <button fxFlex.xs="50" fxFlex.lg="30" fxFlex.sm="30" fxFlex.md="30" routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</button>
   </div>
 </div>
-
-<!-- <div class="container background" fxLayout="row">
-  <div fxLayout="column" fxFlex="100%"> -->
-<!-- <div fxLayout="row"> -->
-<!-- <div fxLayoutAlign="center start" fxFlex="100%">
-      <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">
-    </div>
-    <div fxLayoutAlign="center" *ngIf="users">
-      <div class="avatar" *ngFor="let user of users">
-        <img src="{{user.AvatarLink}}" alt="invalid pic">
-      </div>
-    </div>
-  </div>
-</div>
-<div style="margin-top:20px" class="container" fxLayoutAlign="center" fxLayout="row">
-
-</div>
-<div class="container" fxLayoutAlign="center" fxLayout="row" fxLayoutGap="10px">
-  <div class="container" fxLayout="column">
-    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>
-  </div>
-</div> -->

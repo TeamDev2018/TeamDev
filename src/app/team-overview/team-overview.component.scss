@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
+#logo {
+    max-width: 100%;
+}
+
 div.avatar {
 
     // margin-top: -15em;
@@ -18,6 +22,6 @@ div.avatar {
 }
 
 a#start {
-    padding: 15px;
-    font-size: 3em;
+    padding: 1em;
+    font-size: 3rem;
 }
