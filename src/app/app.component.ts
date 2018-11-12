@@ -7,16 +7,17 @@ import { OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 
 const fadeIn = [
-  query(':enter, :leave', style({ position: 'fixed', width: '100%' }), { optional: true }),
-  group([
-    query(':enter', [
-      style({ transform: 'translateX(100%)' }),
-      animate('0.5s ease-in-out', style({ transform: 'translateX(0%)' }))
-    ], { optional: true }),
+  query(':leave, :enter', style({ position: 'fixed', height: '100%' }), { optional: true }),
+  query(':enter', style({ visibility: 'hidden' })),
+  sequence([
     query(':leave', [
-      style({ transform: 'translateX(0%)' }),
-      animate('0.5s ease-in-out', style({ transform: 'translateX(-100%)' }))
+      style({ height: '100%' }),
+      animate('0.5s ease-in-out', style({ height: '0%' })),
     ], { optional: true }),
+    query(':enter', [
+      style({ visibility: 'visible' }),
+      animate('0.5s ease-in-out', style({ height: '100%' }))
+    ], { optional: true })
   ])
 ];
 
@@ -26,7 +27,7 @@ const fadeIn = [
   styleUrls: ['./app.component.css'],
   animations: [
     trigger('routeAnimation', [
-      transition('* <=> *', fadeIn)
+      transition('teamOverview => teamList', fadeIn)
     ])
   ]
 })
