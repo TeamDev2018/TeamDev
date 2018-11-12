@@ -27,19 +27,21 @@ export class ListUserComponent implements OnInit {
   constructor(public el: ElementRef) { }
 
   ngOnInit() {
-    const observer = new IntersectionObserver( (entries: IntersectionObserverEntry[]) => {
-      const entry = entries[0];
-      if (entry.intersectionRatio > 0.99) {
-        this.state = 'active';
-      } else {
-        this.state = 'inactive';
-      }
-    }, {
-      root: this.intersector.nativeElement,
-      rootMargin: '1px',
-      threshold: 1.0
-    });
-    observer.observe(this.el.nativeElement);
+    if (this.intersector) {
+      const observer = new IntersectionObserver( (entries: IntersectionObserverEntry[]) => {
+        const entry = entries[0];
+        if (entry.intersectionRatio > 0.99) {
+          this.state = 'active';
+        } else {
+          this.state = 'inactive';
+        }
+      }, {
+        root: this.intersector.nativeElement,
+        rootMargin: '1px',
+        threshold: 1.0
+      });
+      observer.observe(this.el.nativeElement);
+    }
   }
 
 }
