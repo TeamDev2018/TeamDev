@@ -165,6 +165,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#intersector">intersector</a>
+                            </li>
+                            <li>
                                 <a href="#user">user</a>
                             </li>
                         </ul>
@@ -173,20 +176,6 @@
 
 
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>HostListeners</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#window:scroll">window:scroll</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
         </tbody>
     </table>
@@ -247,6 +236,27 @@
             <tbody>
                 <tr>
                     <td class="col-md-2">
+                        <a name="intersector"></a>
+                        <code>intersector</code>
+                    </td>
+                    <td class="col-md-10">
+                            <p>
+                            <em>Type :</em>    <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                            </p>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:24</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-2">
                         <a name="user"></a>
                         <code>user</code>
                     </td>
@@ -267,42 +277,6 @@
 </section>
 
 
-    <section>
-    <h3>HostListeners</h3>        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="window:scroll"></a>
-                        <span class="name">
-                            <b>
-                            window:scroll
-                            </b>
-                            <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Arguments : </i><code>'$event' </code>
-                        </td>
-                    </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>window:scroll()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/team-list/list-user/list-user.component.ts:33</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-</section>
 
     <section>
     
@@ -458,28 +432,27 @@ import { Component, ElementRef, HostListener, Input, OnInit } from &#x27;@angula
 })
 export class ListUserComponent implements OnInit {
   private state: String &#x3D; &#x27;inactive&#x27;;
-
+  @Input() intersector: ElementRef;
   @Input() user: User;
 
   constructor(public el: ElementRef) { }
 
   ngOnInit() {
-  }
-
-  @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])
-  checkScroll() {
-    const componentPosition &#x3D; this.el.nativeElement.offsetTop;
-    const scrollPosition &#x3D; window.pageYOffset + 350;
-    const viewPosition &#x3D; scrollPosition - (componentPosition + this.el.nativeElement.offsetHeight);
-
-    if (scrollPosition &gt;&#x3D; componentPosition &amp;&amp; viewPosition &lt;&#x3D; this.el.nativeElement.offsetHeight / 3) {
-      console.log(&#x27;cp &#x27;, componentPosition);
-      console.log(&#x27;sp &#x27;, scrollPosition);
-      this.state &#x3D; &#x27;active&#x27;;
-    } else {
-      this.state &#x3D; &#x27;inactive&#x27;;
+    if (this.intersector) {
+      const observer &#x3D; new IntersectionObserver( (entries: IntersectionObserverEntry[]) &#x3D;&gt; {
+        const entry &#x3D; entries[0];
+        if (entry.intersectionRatio &gt; 0.99) {
+          this.state &#x3D; &#x27;active&#x27;;
+        } else {
+          this.state &#x3D; &#x27;inactive&#x27;;
+        }
+      }, {
+        root: this.intersector.nativeElement,
+        rootMargin: &#x27;1px&#x27;,
+        threshold: 1.0
+      });
+      observer.observe(this.el.nativeElement);
     }
-
   }
 
 }

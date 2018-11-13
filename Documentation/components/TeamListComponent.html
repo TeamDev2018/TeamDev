@@ -330,21 +330,26 @@ export class TeamListComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container background&quot; fxLayout&#x3D;&quot;row&quot;&gt;
-  &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
-    &lt;div fxLayoutAlign&#x3D;&quot;center&quot; *ngIf&#x3D;&quot;users&quot;&gt;
-      &lt;div class&#x3D;&quot;avatar&quot; *ngFor&#x3D;&quot;let user of users&quot;&gt;
-        &lt;img src&#x3D;&quot;{{user.AvatarLinkHead}}&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height:100%;&quot; fxLayout&#x3D;&quot;column&quot;&gt;
+  &lt;div class&#x3D;&quot;container background&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;row&quot;&gt;
+      &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
+        &lt;div fxLayoutAlign&#x3D;&quot;center&quot; *ngIf&#x3D;&quot;users&quot;&gt;
+          &lt;div class&#x3D;&quot;avatar&quot; *ngFor&#x3D;&quot;let user of users&quot;&gt;
+            &lt;img src&#x3D;&quot;{{user.AvatarLinkHead}}&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;div fxLayout&#x3D;&quot;row&quot;&gt;
-  &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
-    &lt;app-list-user fxFlexOffset&#x3D;&quot;3em&quot; fxLayoutAlign&#x3D;&quot;center start&quot; *ngFor&#x3D;&quot;let user of users&quot; [user]&#x3D;&quot;user&quot;&gt;&lt;/app-list-user&gt;
+  &lt;div fxLayout&#x3D;&quot;row&quot; fxLayoutAlign&#x3D;&quot;center start&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;auto&quot;&gt;
+      &lt;app-list-user fxFlexOffset&#x3D;&quot;3em&quot; fxLayoutAlign&#x3D;&quot;center start&quot; *ngFor&#x3D;&quot;let user of users&quot; [user]&#x3D;&quot;user&quot; [intersector]&#x3D;&quot;intersector&quot;&gt;&lt;/app-list-user&gt;
+      &lt;div style&#x3D;&quot;margin-top: 300px;&quot;&gt;&amp;nbsp;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;
-&lt;div style&#x3D;&quot;margin-top:500px&quot;&gt;&amp;nbsp;&lt;/div&gt;</code></pre>
+  &lt;div #intersector style&#x3D;&quot;position: fixed; top: 50vh; left: 50vw; width: 1px; height: 1px&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -354,7 +359,6 @@ export class TeamListComponent implements OnInit {
                 <pre class="line-numbers"><code class="language-scss">.container.background {
     background-image: url(&#x27;/assets/img/background.png&#x27;);
     height:auto;
-    overflow: hidden;
 }
 
 img {
@@ -388,8 +392,7 @@ mat-card-content {
         position: relative;
         z-index: 2;
     }
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -417,7 +420,7 @@ mat-card-content {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container background" fxLayout="row">  <div fxLayout="column" fxFlex="100%">    <div fxLayoutAlign="center" *ngIf="users">      <div class="avatar" *ngFor="let user of users">        <img src="{{user.AvatarLinkHead}}" alt="invalid pic">      </div>    </div>  </div></div><div fxLayout="row">  <div fxLayout="column" fxFlex="100%">    <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user"></app-list-user>  </div></div><div style="margin-top:500px">&nbsp;</div></div>'
+        var COMPONENT_TEMPLATE = '<div><div style="height:100%;" fxLayout="column">  <div class="container background">    <div fxLayout="row">      <div fxLayout="column" fxFlex="100%">        <div fxLayoutAlign="center" *ngIf="users">          <div class="avatar" *ngFor="let user of users">            <img src="{{user.AvatarLinkHead}}" alt="invalid pic">          </div>        </div>      </div>    </div>  </div>  <div fxLayout="row" fxLayoutAlign="center start">    <div fxLayout="column" fxFlex="auto">      <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user" [intersector]="intersector"></app-list-user>      <div style="margin-top: 300px;">&nbsp;</div>    </div>  </div>  <div #intersector style="position: fixed; top: 50vh; left: 50vw; width: 1px; height: 1px"></div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'NewUserDialogComponent', 'selector': ''},{'name': 'TeamListComponent', 'selector': 'app-team-list'},{'name': 'TeamOverviewComponent', 'selector': 'app-team-overview'},{'name': 'UserDetailComponent', 'selector': 'app-user-detail'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TeamListComponent'};

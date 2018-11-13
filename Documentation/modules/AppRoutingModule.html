@@ -75,8 +75,8 @@ import { TeamOverviewComponent } from &#x27;./team-overview/team-overview.compon
 import { UserDetailComponent } from &#x27;./user-detail/user-detail.component&#x27;;
 
 const routes: Routes &#x3D; [
-  { path: &#x27;team-overview&#x27;, component: TeamOverviewComponent },
-  { path: &#x27;team&#x27;, component: TeamListComponent },
+  { path: &#x27;team-overview&#x27;, component: TeamOverviewComponent, data: { animation: &#x27;teamOverview&#x27; } },
+  { path: &#x27;team&#x27;, component: TeamListComponent, data: { animation: &#x27;teamList&#x27; } },
   { path: &#x27;user-detail/:id&#x27;, component: UserDetailComponent },
   { path: &#x27;&#x27;, redirectTo: &#x27;/team-overview&#x27;, pathMatch: &#x27;full&#x27; }
 ];

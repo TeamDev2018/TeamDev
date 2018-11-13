@@ -161,7 +161,8 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ListUserComponent } from &#x27;./list-user/list-user.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { BrowserAnimationsModule } from &#x27;@angular/platform-browser/animations&#x27;;
+import { ListUserComponent } from &#x27;./list-user/list-user.component&#x27;;
 import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
 import { TeamListComponent } from &#x27;./team-list/team-list.component&#x27;;
@@ -181,7 +182,8 @@ import { MatBadgeModule } from &#x27;@angular/material/badge&#x27;;
     MatChipsModule,
     MatCardModule,
     MatButtonModule,
-    MatBadgeModule
+    MatBadgeModule,
+    BrowserAnimationsModule
   ],
   declarations: [TeamListComponent, ListUserComponent]
 })

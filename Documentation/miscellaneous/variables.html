@@ -63,6 +63,9 @@
                             <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
                         </li>
                         <li>
+                            <a href="#routeChange" title="src/app/animations/animations.ts"><b>routeChange</b>&nbsp;&nbsp;&nbsp;(src/.../animations.ts)</a>
+                        </li>
+                        <li>
                             <a href="#USERS" title="src/data/users.ts"><b>USERS</b>&nbsp;&nbsp;&nbsp;(src/.../users.ts)</a>
                         </li>
                     </ul>
@@ -158,6 +161,56 @@
 </div>
                     </td>
                 </tr>
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/animations/animations.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="routeChange"></a>
+                        <span class="name">
+                            <b>
+                            routeChange
+                            </b>
+                            <a href="#routeChange"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>routeChange:     <code>[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+    query(&#x27;:leave, :enter&#x27;, style({ position: &#x27;fixed&#x27;, height: &#x27;100%&#x27;, width: &#x27;100%&#x27; }), { optional: true }),
+    query(&#x27;:enter&#x27;, style({ visibility: &#x27;hidden&#x27; })),
+    sequence([
+        query(&#x27;:leave&#x27;, [
+            style({ overflow: &#x27;hidden&#x27;, height: &#x27;100%&#x27; }),
+            animate(&#x27;0.5s ease-in-out&#x27;, style({ height: &#x27;0%&#x27; })),
+        ], { optional: true }),
+        query(&#x27;:enter&#x27;, [
+            style({ visibility: &#x27;visible&#x27;, overflow: &#x27;hidden&#x27;, height: &#x27;0%&#x27; }),
+            animate(&#x27;0.5s ease-in-out&#x27;, style({ height: &#x27;100%&#x27; }))
+        ], { optional: true })
+    ])
+]</code>
+                        </td>
+                    </tr>
+
 
             </tbody>
         </table>

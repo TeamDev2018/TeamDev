@@ -137,6 +137,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#prepRouteState">prepRouteState</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -151,6 +165,81 @@
 
 
 
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="prepRouteState"></a>
+                        <span class="name">
+                            <b>
+                            prepRouteState
+                            </b>
+                            <a href="#prepRouteState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>prepRouteState(outlet: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>outlet</td>
+                                                        <td>
+                                                                    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
 
     <section>
     
@@ -189,7 +278,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/app.component.ts:22</a></div>
                             </td>
                         </tr>
 
@@ -208,7 +297,9 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { routeChange } from &#x27;./animations/animations&#x27;;
+import { transition, trigger } from &#x27;@angular/animations&#x27;;
+import { Component } from &#x27;@angular/core&#x27;;
 
 /**
  * The base component, only holds the router-outlet and serves as a parent for the whole app.
@@ -216,13 +307,23 @@
 @Component({
   selector: &#x27;app-root&#x27;,
   templateUrl: &#x27;./app.component.html&#x27;,
-  styleUrls: [&#x27;./app.component.css&#x27;]
+  styleUrls: [&#x27;./app.component.css&#x27;],
+  animations: [
+    trigger(&#x27;routeAnimation&#x27;, [
+      transition(&#x27;teamOverview &lt;&#x3D;&gt; teamList&#x27;, routeChange)
+    ])
+  ]
 })
 export class AppComponent {
   /**
    * The title of the application.
    */
   title &#x3D; &#x27;TeamDev&#x27;;
+
+  prepRouteState(outlet: any) {
+    console.log(outlet.activatedRouteData[&#x27;animation&#x27;]);
+    return outlet.activatedRouteData[&#x27;animation&#x27;] || &#x27;firstPage&#x27;;
+  }
 }
 </code></pre>
     </div>
@@ -233,8 +334,11 @@ export class AppComponent {
     &lt;h1&gt;{{ title }}&lt;/h1&gt;
   &lt;/mat-toolbar-row&gt;
 &lt;/mat-toolbar&gt; --&gt;
+&lt;div [@routeAnimation]&#x3D;&quot;prepRouteState(routerOutlet)&quot;&gt;
+    &lt;router-outlet #routerOutlet&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;
 
-&lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;!-- &lt;a routerLink&#x3D;&quot;/team&quot; id&#x3D;&quot;start&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Kollegen stalken!&lt;/a&gt; --&gt;
 </code></pre>
     </div>
 
@@ -278,7 +382,7 @@ mat-toolbar {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <mat-toolbar>  <mat-toolbar-row>    <h1>{{ title }}</h1>  </mat-toolbar-row></mat-toolbar> --><router-outlet></router-outlet></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- <mat-toolbar>  <mat-toolbar-row>    <h1>{{ title }}</h1>  </mat-toolbar-row></mat-toolbar> --><div [@routeAnimation]="prepRouteState(routerOutlet)">    <router-outlet #routerOutlet="outlet"></router-outlet></div><!-- <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a> --></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'NewUserDialogComponent', 'selector': ''},{'name': 'TeamListComponent', 'selector': 'app-team-list'},{'name': 'TeamOverviewComponent', 'selector': 'app-team-overview'},{'name': 'UserDetailComponent', 'selector': 'app-user-detail'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};

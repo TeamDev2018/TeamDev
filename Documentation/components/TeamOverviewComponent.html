@@ -417,10 +417,29 @@ export class TeamOverviewComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container background&quot; fxLayout&#x3D;&quot;row&quot;&gt;
-  &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
-    &lt;!-- &lt;div fxLayout&#x3D;&quot;row&quot;&gt; --&gt;
-    &lt;div fxLayoutAlign&#x3D;&quot;center start&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height:100%&quot; fxLayout&#x3D;&quot;column&quot;&gt;
+  &lt;div class&#x3D;&quot;container background&quot; fxFlex&#x3D;&quot;70&quot;&gt;
+    &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100&quot;&gt;
+      &lt;div fxLayoutAlign&#x3D;&quot;center start&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+        &lt;img src&#x3D;&quot;./assets/img/TeamDev-logo.png&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
+      &lt;/div&gt;
+      &lt;div fxLayoutAlign&#x3D;&quot;center end&quot; fxFlexOffset.xs&#x3D;&quot;0em&quot; fxLayoutAlign.xs&#x3D;&quot;center center&quot; fxLayout&#x3D;&quot;row&quot; fxFlex&#x3D;&quot;100&quot;&gt;
+        &lt;div fxLayout&#x3D;&quot;column&quot;&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;avatar&quot; *ngFor&#x3D;&quot;let user of users&quot;&gt;
+          &lt;img src&#x3D;&quot;{{user.AvatarLink}}&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;column&quot;&gt;
+    &lt;a routerLink&#x3D;&quot;/team&quot; id&#x3D;&quot;start&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Kollegen stalken!&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- &lt;div class&#x3D;&quot;container background&quot; fxLayout&#x3D;&quot;row&quot;&gt;
+  &lt;div fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;100%&quot;&gt; --&gt;
+&lt;!-- &lt;div fxLayout&#x3D;&quot;row&quot;&gt; --&gt;
+&lt;!-- &lt;div fxLayoutAlign&#x3D;&quot;center start&quot; fxFlex&#x3D;&quot;100%&quot;&gt;
       &lt;img src&#x3D;&quot;./assets/img/TeamDev-logo.png&quot; alt&#x3D;&quot;invalid pic&quot;&gt;
     &lt;/div&gt;
     &lt;div fxLayoutAlign&#x3D;&quot;center&quot; *ngIf&#x3D;&quot;users&quot;&gt;
@@ -437,7 +456,7 @@ export class TeamOverviewComponent implements OnInit {
   &lt;div class&#x3D;&quot;container&quot; fxLayout&#x3D;&quot;column&quot;&gt;
     &lt;a routerLink&#x3D;&quot;/team&quot; id&#x3D;&quot;start&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Kollegen stalken!&lt;/a&gt;
   &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+&lt;/div&gt; --&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -456,10 +475,10 @@ export class TeamOverviewComponent implements OnInit {
 
 div.avatar {
 
-    margin-top: -15em;
+    // margin-top: -15em;
 
     img {
-        max-width: 20em;
+        max-width: 100%;
     }
 }
 
@@ -494,7 +513,7 @@ a#start {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container background" fxLayout="row">  <div fxLayout="column" fxFlex="100%">    <!-- <div fxLayout="row"> -->    <div fxLayoutAlign="center start" fxFlex="100%">      <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">    </div>    <div fxLayoutAlign="center" *ngIf="users">      <div class="avatar" *ngFor="let user of users">        <img src="{{user.AvatarLink}}" alt="invalid pic">      </div>    </div>  </div></div><div style="margin-top:20px" class="container" fxLayoutAlign="center" fxLayout="row"></div><div class="container" fxLayoutAlign="center" fxLayout="row" fxLayoutGap="10px">  <div class="container" fxLayout="column">    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div style="height:100%" fxLayout="column">  <div class="container background" fxFlex="70">    <div fxLayout="column" fxFlex="100">      <div fxLayoutAlign="center start" fxLayout="row">        <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">      </div>      <div fxLayoutAlign="center end" fxFlexOffset.xs="0em" fxLayoutAlign.xs="center center" fxLayout="row" fxFlex="100">        <div fxLayout="column"></div>        <div class="avatar" *ngFor="let user of users">          <img src="{{user.AvatarLink}}" alt="invalid pic">        </div>      </div>    </div>  </div>  <div class="container" fxLayout="column">    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>  </div></div><!-- <div class="container background" fxLayout="row">  <div fxLayout="column" fxFlex="100%"> --><!-- <div fxLayout="row"> --><!-- <div fxLayoutAlign="center start" fxFlex="100%">      <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">    </div>    <div fxLayoutAlign="center" *ngIf="users">      <div class="avatar" *ngFor="let user of users">        <img src="{{user.AvatarLink}}" alt="invalid pic">      </div>    </div>  </div></div><div style="margin-top:20px" class="container" fxLayoutAlign="center" fxLayout="row"></div><div class="container" fxLayoutAlign="center" fxLayout="row" fxLayoutGap="10px">  <div class="container" fxLayout="column">    <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a>  </div></div> --></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'NewUserDialogComponent', 'selector': ''},{'name': 'TeamListComponent', 'selector': 'app-team-list'},{'name': 'TeamOverviewComponent', 'selector': 'app-team-overview'},{'name': 'UserDetailComponent', 'selector': 'app-user-detail'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'TeamOverviewComponent'};
