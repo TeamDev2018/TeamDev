@@ -12,9 +12,8 @@
   </div>
   <div fxLayout="row" fxLayoutAlign="center start">
     <div fxLayout="column" fxFlex="auto">
-      <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user" [intersector]="intersector"></app-list-user>
+      <app-list-user fxFlexOffset="3em" fxLayoutAlign="center start" *ngFor="let user of users" [user]="user"></app-list-user>
       <div style="margin-top: 300px;">&nbsp;</div>
     </div>
   </div>
-  <div #intersector style="position: fixed; top: 50vh; left: 50vw; width: 1px; height: 1px"></div>
 </div>

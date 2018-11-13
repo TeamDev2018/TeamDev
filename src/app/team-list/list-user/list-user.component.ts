@@ -21,27 +21,23 @@ import { Component, ElementRef, HostListener, Input, OnInit } from '@angular/cor
 })
 export class ListUserComponent implements OnInit {
   private state: String = 'inactive';
-  @Input() intersector: any;
   @Input() user: User;
 
   constructor(public el: ElementRef) { }
 
   ngOnInit() {
-    if (this.intersector) {
-      const _observer = new IntersectionObserver( (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
-        const entry = entries[0];
-        console.log(entry, observer);
-        if (entry.isIntersecting) {
-          this.state = 'active';
-        } else {
-          this.state = 'inactive';
-        }
-      }, {
-        root: null,
-        rootMargin: '-49%'
-      });
-      _observer.observe(this.el.nativeElement);
-    }
+    const _observer = new IntersectionObserver( (entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+      const entry = entries[0];
+      console.log(entry, observer);
+      if (entry.isIntersecting) {
+        this.state = 'active';
+      } else {
+        this.state = 'inactive';
+      }
+    }, {
+      root: null,
+      rootMargin: '-49%'
+    });
+    _observer.observe(this.el.nativeElement);
   }
-
 }
