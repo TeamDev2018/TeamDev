@@ -329,17 +329,9 @@ export class AppComponent {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- &lt;mat-toolbar&gt;
-  &lt;mat-toolbar-row&gt;
-    &lt;h1&gt;{{ title }}&lt;/h1&gt;
-  &lt;/mat-toolbar-row&gt;
-&lt;/mat-toolbar&gt; --&gt;
-&lt;div [@routeAnimation]&#x3D;&quot;prepRouteState(routerOutlet)&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div style&#x3D;&quot;height: 100%&quot; [@routeAnimation]&#x3D;&quot;prepRouteState(routerOutlet)&quot;&gt;
     &lt;router-outlet #routerOutlet&#x3D;&quot;outlet&quot;&gt;&lt;/router-outlet&gt;
-&lt;/div&gt;
-
-&lt;!-- &lt;a routerLink&#x3D;&quot;/team&quot; id&#x3D;&quot;start&quot; mat-raised-button color&#x3D;&quot;primary&quot;&gt;Kollegen stalken!&lt;/a&gt; --&gt;
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-styleData">
@@ -382,7 +374,7 @@ mat-toolbar {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- <mat-toolbar>  <mat-toolbar-row>    <h1>{{ title }}</h1>  </mat-toolbar-row></mat-toolbar> --><div [@routeAnimation]="prepRouteState(routerOutlet)">    <router-outlet #routerOutlet="outlet"></router-outlet></div><!-- <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a> --></div>'
+        var COMPONENT_TEMPLATE = '<div><div style="height: 100%" [@routeAnimation]="prepRouteState(routerOutlet)">    <router-outlet #routerOutlet="outlet"></router-outlet></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ListUserComponent', 'selector': 'app-list-user'},{'name': 'NewUserDialogComponent', 'selector': ''},{'name': 'TeamListComponent', 'selector': 'app-team-list'},{'name': 'TeamOverviewComponent', 'selector': 'app-team-overview'},{'name': 'UserDetailComponent', 'selector': 'app-user-detail'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
