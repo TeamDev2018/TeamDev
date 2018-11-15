@@ -8,6 +8,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { MatBadgeModule } from '@angular/material/badge';
+import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 
 /**
  * Sub-Module for the {@link TeamListComponent} page
@@ -20,7 +21,10 @@ import { MatBadgeModule } from '@angular/material/badge';
     MatCardModule,
     MatButtonModule,
     MatBadgeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LazyLoadImageModule.forRoot({
+      preset: intersectionObserverPreset
+    })
   ],
   declarations: [TeamListComponent, ListUserComponent]
 })

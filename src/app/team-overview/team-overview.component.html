@@ -2,12 +2,12 @@
   <div class="container background" fxFlex="70">
     <div fxLayout="column" fxFlex="100">
       <div fxLayoutAlign="center start" fxLayout="row">
-        <img src="./assets/img/TeamDev-logo.png" alt="invalid pic">
+        <img [lazyLoad]="'./assets/img/TeamDev-logo.png'" alt="invalid pic">
       </div>
       <div fxLayoutAlign="center end" fxFlexOffset.xs="0em" fxLayoutAlign.xs="center center" fxLayout="row" fxFlex="100">
         <div fxLayout="column"></div>
         <div class="avatar" *ngFor="let user of users">
-          <img src="{{user.AvatarLink}}" alt="invalid pic">
+          <img [lazyLoad]="user.AvatarLink" alt="invalid pic">
         </div>
       </div>
     </div>

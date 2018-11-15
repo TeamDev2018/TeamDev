@@ -23,6 +23,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { TeamOverviewComponent } from './team-overview/team-overview.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { LazyLoadImageModule, intersectionObserverPreset } from 'ng-lazyload-image';
 import { APP_BASE_HREF } from '@angular/common';
 
 /**
@@ -52,7 +53,10 @@ import { APP_BASE_HREF } from '@angular/common';
     MatBadgeModule,
     AvatarModule,
     TeamListModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LazyLoadImageModule.forRoot({
+      preset: intersectionObserverPreset
+    })
   ],
   entryComponents: [
     NewUserDialogComponent

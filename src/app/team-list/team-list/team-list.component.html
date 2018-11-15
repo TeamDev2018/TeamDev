@@ -4,7 +4,7 @@
       <div fxLayout="column" fxFlex="100%">
         <div fxLayoutAlign="center" *ngIf="users">
           <div class="avatar" *ngFor="let user of users">
-            <img src="{{user.AvatarLinkHead}}" alt="invalid pic">
+            <img [lazyLoad]="user.AvatarLinkHead" alt="invalid pic">
           </div>
         </div>
       </div>

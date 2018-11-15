@@ -2,3 +2,10 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif }
+.ng-lazyloaded { 
+    animation: blur .5s;
+}
+@keyframes blur {
+    from { filter: blur(3px) }
+    to   { filter: blur(0px) }
+}

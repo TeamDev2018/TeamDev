@@ -4,7 +4,7 @@
     <div class="card-content" fxLayout="row" fxLayout.xs="column">
       <div fxFlex="30">
         <!-- <div class="bg-image" [ngClass]="{'office2': true}"></div> -->
-        <img style="min-width:18em; min-height: 30em; max-width:100%;" src="{{user.AvatarLinkFashion}}" alt="invalid pic">
+        <img style="min-width:18em; min-height: 30em; max-width:100%;" [lazyLoad]="user.AvatarLinkFashion" alt="invalid pic">
       </div>
       <div fxFlexOffset="10em" *ngIf="user.Attributes.length" fxFlexOffset.xs="0em" fxLayoutAlign="center center" fxFlex="70">
         <mat-card>
