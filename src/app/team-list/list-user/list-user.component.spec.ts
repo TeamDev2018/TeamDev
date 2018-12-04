@@ -1,16 +1,16 @@
+import { AppModule } from '../../app.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeamOverviewComponent } from './team-overview.component';
-import { AppModule } from '../app.module';
+import { ListUserComponent } from './list-user.component';
 import { APP_BASE_HREF } from '@angular/common';
 
-describe('TeamOverviewComponent', () => {
-  let component: TeamOverviewComponent;
-  let fixture: ComponentFixture<TeamOverviewComponent>;
+describe('ListUserComponent', () => {
+  let component: ListUserComponent;
+  let fixture: ComponentFixture<ListUserComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [  ],
+      declarations: [ ],
       imports: [
         AppModule
       ],
@@ -20,15 +20,12 @@ describe('TeamOverviewComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TeamOverviewComponent);
+    fixture = TestBed.createComponent(ListUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-  it('should get Users', () => {
-    expect(component.users.length).toBeGreaterThan(0);
   });
 });

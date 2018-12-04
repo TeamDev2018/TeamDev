@@ -1,0 +1,37 @@
+.container.background {
+    background-image: url('/assets/img/background.png');
+    height:auto;
+}
+
+img {
+    max-width: 10em;
+    max-height: 10em;
+}
+
+mat-card-content {
+    div.bg-image {
+        // background-image: url('../../assets/img/office-1.jpg');
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        right: 0;
+        position: absolute;
+        z-index: 1;
+    }
+
+    div.bg-image.office1 {
+        background-image: url('/assets/img/office-1.jpg')
+    }
+
+    div.bg-image.office2 {
+        background-image: url('/assets/img/office-2.jpg');
+    }
+    
+    .card-content {
+        position: relative;
+        z-index: 2;
+    }
+}

@@ -1,7 +1,10 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-toolbar-row>
     <h1>{{ title }}</h1>
   </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
+<div [@routeAnimation]="prepRouteState(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
+<!-- <a routerLink="/team" id="start" mat-raised-button color="primary">Kollegen stalken!</a> -->

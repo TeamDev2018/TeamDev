@@ -1,12 +1,12 @@
+import { AppModule } from '../../app.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TeamOverviewComponent } from './team-overview.component';
-import { AppModule } from '../app.module';
+import { TeamListComponent } from './team-list.component';
 import { APP_BASE_HREF } from '@angular/common';
 
-describe('TeamOverviewComponent', () => {
-  let component: TeamOverviewComponent;
-  let fixture: ComponentFixture<TeamOverviewComponent>;
+describe('TeamListComponent', () => {
+  let component: TeamListComponent;
+  let fixture: ComponentFixture<TeamListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,7 +20,7 @@ describe('TeamOverviewComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TeamOverviewComponent);
+    fixture = TestBed.createComponent(TeamListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
