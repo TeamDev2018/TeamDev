@@ -9,7 +9,7 @@ export class ArraySliderComponent implements OnInit, OnChanges {
   @Input()
   field;
   @Input()
-  values: [];
+  values: Array<any>;
   @Input()
   current;
   @Output()
@@ -40,7 +40,7 @@ export class ArraySliderComponent implements OnInit, OnChanges {
     this.current = ( this.field ? this.values[this.index][this.field] : this.values[this.index]);
     this.currentChange.emit(this.current);
   }
-  format(field, values: [], value: number ) {
+  format(field, values: Array<any>, value: number ) {
     if (!value) {
       value = 0;
     }

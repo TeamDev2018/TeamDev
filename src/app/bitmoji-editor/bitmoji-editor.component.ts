@@ -19,11 +19,11 @@ export class BitmojiEditorComponent implements OnInit {
   brand;
 
   listTraits: Traits[];
-  listPoses: [];
-  listGenders: [];
-  listStyles: [];
-  listOutfits: [];
-  listBrands: [];
+  listPoses: Array<any>;
+  listGenders: Array<any>;
+  listStyles: Array<any>;
+  listOutfits: Array<any>;
+  listBrands: Array<any>;
 
   constructor() { }
 
